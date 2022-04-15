@@ -1,0 +1,69 @@
+.swipe {
+  position: relative;
+  width: fit-content;
+ }
+
+ .swipe::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    width: 0%;
+    height: 100%;
+    background-color: #FF5858;
+    animation: swipe 1.5s ease-out 1s forwards;
+ }
+
+ .swipe--delay::after {
+    background-color: #FFF;
+    animation-delay: 1.5s;
+ }
+ 
+ h1 {
+  display: block;
+  color: #FFF;
+  font-size: 72px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  opacity: 0;
+  animation: fade 0.01s ease-out 1.75s forwards;
+ }
+ 
+ h3 {
+  display: block;
+  color: #FFF;
+  font-size: 32px;
+    line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  opacity: 0;
+  animation: fade 0.01s ease-out 2.25s forwards;
+}
+
+@keyframes fade {
+ from { opacity: 0; }
+ to { opacity: 1; }
+}
+
+@keyframes swipe {
+ 0% {
+  right: 100%;
+  left: 0;
+  width: 0%;
+ }
+ 50% {
+  right: 0;
+  left: 0;
+  width: 100%;
+ }
+ 100% {
+  right: 0;
+  left: 100%;
+  width: 0%;
+ }
+}
