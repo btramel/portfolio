@@ -246,6 +246,7 @@ button {
     background-color: inherit;
     font-size: 1.5rem;
     font-family: inherit;
+    color: black;
     text-transform: uppercase;
 }
 
