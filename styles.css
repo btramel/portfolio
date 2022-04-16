@@ -180,8 +180,16 @@ button {
     gap: 1rem;
 }
 
-.active {
+.active,
+.static {
     max-width: 100%;
+    opacity: .7;
+}
+
+.active:hover,
+.static:hover {
+    opacity: 1;
+    
 }
 
 .description {
