@@ -16,7 +16,7 @@ html {
 
 section {
     min-width: 100vw;
-    padding: 2rem 3rem 2rem 3rem;
+    padding: 2rem 2rem;
 }
 
 .dark {
@@ -24,38 +24,54 @@ section {
     color: white;
 }
 
-.header {
+/* .header {
     text-align: right;
     left: auto;
     padding: .5rem;
     height: 3rem;
     font-size: 1.25rem;
-}
+} */
 
 .color-toggle {
     right: 0;
     top: 0;
 }
 
+.hero-container {
+    max-width: 60vw;
+}
+
 .hero {
     min-height: max-content;
     width: 100%;
+    background-color: #0a0913;
+    color: white;
+    background-image: url(img/Brad3.jpg);
+    background-size:cover;
+    background-position: center;
+    padding-left: 1rem;
 }
 
 .hero h2 {
     line-height: 1.25;
     font-weight:400;
-    font-size: 1.25rem;
-    padding: 2rem 0;
+    font-size: 1rem;
+    padding: 1.5rem 0;
+    max-width: 50vw;
 }
 
 .hero h1 {
     line-height: 80%;
-    font-size: 4rem;
+    font-size: 2.75rem;
     font-weight: 900;
     font-style: italic;
+    max-width: 50vw;
 }
 
+.hero-image {
+    height: 100vh;
+    width: auto;
+}
 .swipe {
     position: relative;
     width: fit-content;
@@ -120,21 +136,20 @@ section {
     max-height: min-content;
     width: 7rem;
     border: 2px solid black;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .divider-light {
     max-height: min-content;
     width: 7rem;
     border: 2px solid white;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 h3 {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
     font-weight: 300;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 p {
@@ -202,7 +217,7 @@ button {
     gap: 1rem;
     font-size: 2rem;;
     place-items: center;
-    height: max-content;
+    min-height: max-content;
     width: max-content;
     padding-top: 1rem;
 }
@@ -313,6 +328,7 @@ button {
 
     .hero {
         max-width: 50%;
+        padding-left: 2rem;
     }
 
     .hero h1 {
@@ -321,6 +337,7 @@ button {
 
     .hero h2 {
         font-size: 2rem;
+        max-width: 50vw;
         }
     
     h3 {
@@ -357,12 +374,17 @@ button {
 
 @media screen and (min-width: 1024px){
     section {
-        padding-left: 10rem;
-        padding-right: 10rem;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    .hero {
+        padding: 10% 2rem 2rem 15%;
     }
 
     .hero h1 {
         font-size: 6rem;
+        max-width: 50vw;
     }
 
     .hero h2 {
