@@ -189,7 +189,9 @@ button {
 
 .one,
 .two,
-.three {
+.three,
+.four,
+.five {
     display:grid;
     place-items: center;
     gap: 1rem;
