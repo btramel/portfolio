@@ -315,7 +315,7 @@ button {
 
 .icon-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
     place-items: center;
     min-height: max-content;
