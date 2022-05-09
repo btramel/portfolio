@@ -200,13 +200,6 @@ button {
 .active,
 .static {
     width: 100%;
-    opacity: .9;
-}
-
-.active:hover,
-.static:hover {
-    opacity: 1;
-
 }
 
 .description {
