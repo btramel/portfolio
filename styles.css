@@ -24,13 +24,13 @@ section {
     color: white;
 }
 
-/* .header {
+.header {
     text-align: right;
     left: auto;
     padding: .5rem;
     height: 3rem;
     font-size: 1.25rem;
-} */
+}
 
 .color-toggle {
     right: 0;
@@ -245,8 +245,25 @@ button {
 
 .contact {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     place-items: center;
+    gap: 1rem;
     height: 15rem;
+}
+
+.contact p,
+.contact h3 {
+    text-align: left;
+    padding: 0;
+}
+
+.contact h3 {
+    font-weight: 500;
+}
+
+.cta-item:nth-child(2) {
+    display: grid;
+    place-items: center;
 }
 
 .contact-button {
