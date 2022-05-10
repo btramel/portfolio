@@ -24,13 +24,13 @@ section {
     color: white;
 }
 
-.header {
+/* .header {
     text-align: right;
     left: auto;
     padding: .5rem;
     height: 3rem;
     font-size: 1.25rem;
-}
+} */
 
 .color-toggle {
     right: 0;
@@ -48,9 +48,12 @@ section {
     color: white;
     background-image: url(img/Brad3.jpg);
     background-size:cover;
-    background-position: center;
-    padding-left: 1rem;
+    background-position:center;
 }
+
+/* .hero {
+    background-size: 100vw;
+} */
 
 .hero h2 {
     line-height: 1.25;
@@ -204,7 +207,7 @@ button {
 
 .description {
     max-width: 100%;
-    text-align: center;
+    text-align:center;
 }
 
 .tech-icon-container {
@@ -252,14 +255,13 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
-    gap: 1rem;
-    height: 15rem;
+    gap: 1.5rem;
+    height: 20rem;
 }
 
 .contact p,
 .contact h3 {
     text-align: left;
-    padding: 0;
 }
 
 .contact h3 {
@@ -268,7 +270,6 @@ button {
 
 .cta-item:nth-child(2) {
     display: grid;
-    place-items: center;
 }
 
 .contact-button {
@@ -391,8 +392,8 @@ button {
 
 @media screen and (min-width: 1024px){
     section {
-        padding-left: 15%;
-        padding-right: 15%;
+        padding-left: 20%;
+        padding-right: 20%;
     }
 
     .hero {
@@ -423,6 +424,7 @@ button {
 
     .description {
         max-width: 35vw;
+        text-align: justify;
     }
 
     .tech-icon-container,
@@ -432,6 +434,11 @@ button {
 
     .footer h3 {
         font-size: 1rem;
+    }
+
+    .contact {
+        padding-left: 20rem;
+        right: auto;
     }
 }
 
