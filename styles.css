@@ -210,11 +210,16 @@ button {
 .tech-icon-container {
     display: flex;
     gap: 1rem;
-    font-size: 2rem;;
+    font-size: 3rem;
     place-items: center;
     min-height: max-content;
     width: max-content;
     padding-top: 1rem;
+}
+
+.icon-box {
+    width: 3rem;
+    height: 3rem;
 }
 
 .project-button-container {
@@ -366,7 +371,7 @@ button {
     }
 
     .tech-icon-container {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .project-button-container {
@@ -417,11 +422,12 @@ button {
     }
 
     .description {
-        max-width: 50vw;
+        max-width: 35vw;
     }
 
-    .tech-icon-container {
-        font-size: 3rem;
+    .tech-icon-container,
+    .icon-box {
+        font-size: 4rem;
     }
 
     .footer h3 {
