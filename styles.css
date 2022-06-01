@@ -112,11 +112,6 @@ section {
     animation: fade 0.01s ease-out 2.25s forwards;
 }
 
-@keyframes fade {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 @keyframes swipe {
 0% {
     right: 100%;
@@ -133,6 +128,11 @@ section {
     left: 100%;
     width: 0%;
 }
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .divider {
@@ -194,7 +194,10 @@ button {
 .two,
 .three,
 .four,
-.five {
+.five,
+.six,
+.seven,
+.eight {
     display:grid;
     place-items: center;
     gap: 1rem;
@@ -424,7 +427,6 @@ button {
 
     .description {
         max-width: 35vw;
-        text-align: justify;
     }
 
     .tech-icon-container,
