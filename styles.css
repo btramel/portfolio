@@ -24,14 +24,6 @@ section {
     color: white;
 }
 
-/* .header {
-    text-align: right;
-    left: auto;
-    padding: .5rem;
-    height: 3rem;
-    font-size: 1.25rem;
-} */
-
 .color-toggle {
     right: 0;
     top: 0;
@@ -50,10 +42,6 @@ section {
     background-size:cover;
     background-position:center;
 }
-
-/* .hero {
-    background-size: 100vw;
-} */
 
 .hero h2 {
     line-height: 1.25;
@@ -445,7 +433,7 @@ button {
 }
 
 
-/* Account for folks who toggle off effects in system settings*/
+/* Account for folks who toggle off effects in system settings */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
