@@ -181,14 +181,7 @@ button {
   gap: 2rem;
 }
 
-.one,
-.two,
-.three,
-.four,
-.five,
-.six,
-.seven,
-.eight {
+.project {
   display: grid;
   place-items: center;
   gap: 1rem;
@@ -206,11 +199,12 @@ button {
 
 .tech-icon-container {
   display: flex;
+  justify-content: center;
+  place-items: center;
+  width: 100%;
   gap: 1rem;
   font-size: 3rem;
-  place-items: center;
   min-height: max-content;
-  width: max-content;
   padding-top: 1rem;
 }
 
