@@ -13,6 +13,11 @@ import {
   FiMessageSquare,
   FiExternalLink,
 } from 'react-icons/fi'
+import jaden from '../public/images/jaden.png'
+import medium from '../public/images/medium.jpg'
+import minn from '../public/images/MINN.jpeg'
+import pokedex from '../public/images/pokedex.jpg'
+import allstar from '../public/images/vote.jpeg'
 
 const Home = () => {
   const navItems = [
@@ -338,7 +343,7 @@ const About = ({ fonts }) => {
 const Projects = ({ fonts }) => {
   const projects = [
     {
-      image: '/../public/images/jaden.png',
+      image: jaden,
       title: 'Bad Night Microsite',
       description:
         "Minnesota Timberwolves forward Jaden McDaniels said he loves making the NBA's best have a 'bad night.' This microsite, built to encourage his inclusion on the All-Defensive team, takes that quote and runs with it.",
@@ -346,7 +351,7 @@ const Projects = ({ fonts }) => {
       link: 'https://timberwolves.com/badnight',
     },
     {
-      image: '/../public/images/MINN.jpeg',
+      image: minn,
       title: 'City Edition Microsite',
       description:
         'This microsite, built to coincide with the reveal of the Timberwolves yearly City-Edition uniform is a style guide made interactive. ',
@@ -354,7 +359,7 @@ const Projects = ({ fonts }) => {
       link: 'https://timberwolves.com/canvas',
     },
     {
-      image: '/../public/images/vote.jpeg',
+      image: allstar,
       title: 'All-Star Microsite',
       description:
         'This microsite was part of the campaign that helped send Anthony Edwards to the 2023 All-Star Game. Site has since been redirected.',
@@ -362,7 +367,7 @@ const Projects = ({ fonts }) => {
       link: 'https://timberwolves.com/allstar',
     },
     {
-      image: '/../public/images/pokedex.jpg',
+      image: pokedex,
       title: 'Pokedex',
       description:
         'API-leveraged data organized in a beautiful, component-based UI. Light/Dark mode toggle. Dynamic routes. Sleek animations.',
@@ -371,7 +376,7 @@ const Projects = ({ fonts }) => {
       link: 'https://svelte-pokedex-lovat.vercel.app/',
     },
     {
-      image: '/../public/images/medium.jpg',
+      image: medium,
       title: 'Medium Clone',
       description:
         'Blogging platform clone that takes advantage of NextJS server-side rendering and incremental static regeneration. Likes and comments.',
