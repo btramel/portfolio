@@ -314,22 +314,28 @@ const About = ({ fonts }) => {
         className={`flex flex-col gap-6 ${fonts.base}`}
       >
         <p className='leading-normal font-light'>
-          Hey there! My name is Brad and I build cool websites for the Minnesota
-          Timberwolves & Lynx. I assume you want to know a little something
-          about how I got here, how I built this.
+          Hey there! My name is Brad and I build web experiences for the
+          Minnesota Timberwolves & Lynx digital marketing team. I assume you
+          want to know a little something about how I got here, how I built
+          this.
         </p>
         <p className='leading-normal font-light'>
-          My professional life used to be an amalgam of side gigs -- I managed
-          projects for a construction company, wrote copy for a giant ecommerce
-          company that sold Halloween costumes, I even detoured to law school! I
-          taught myself web development a few years ago and finally found the
-          professional spark I had been searching for. Coding enabled me to
-          solve real-world problems, scratched my creative itch, and empowered
-          me to learn constantly. I never looked back.
+          My professional life used to be an amalgam of side gigs — I managed
+          projects for a construction company, wrote copy for a giant e-commerce
+          company, even detoured to law school! I taught myself web development
+          a few years ago and finally found the professional spark I had been
+          searching for. Coding enabled me to solve real-world problems,
+          scratched my creative itch, and empowered me to learn constantly. I
+          never looked back.
         </p>
         <p className='leading-normal font-light'>
           Now I use my writing chops, eye for design, and endless curiosity to
-          inform my craft: building and designing pixel-perfect websites.
+          inform my craft: building and designing pixel-perfect websites. I have
+          become skilled at developing beautiful, performant, responsive React
+          UIs that leverage API data. I keep the user experience at the
+          forefront of my mind as I build every project. Going forward I aim add
+          animation libraries like ThreeJS, data visualization libraries like
+          D3, and low-code tools like Webflow to my toolbelt. All in due time.
         </p>
         <p className='leading-normal font-light'>
           A few technologies I&apos;ve been working with recently: JavaScript
@@ -354,7 +360,7 @@ const Projects = ({ fonts }) => {
       image: minn,
       title: 'City Edition Microsite',
       description:
-        'This microsite, built to coincide with the reveal of the Timberwolves yearly City-Edition uniform is a style guide made interactive. ',
+        'This microsite, built to reveal the 2022-23 City-Edition uniform, is a style guide made interactive.',
       techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
       link: 'https://timberwolves.com/canvas',
     },
@@ -370,7 +376,7 @@ const Projects = ({ fonts }) => {
       image: pokedex,
       title: 'Pokedex',
       description:
-        'API-leveraged data organized in a beautiful, component-based UI. Light/Dark mode toggle. Dynamic routes. Sleek animations.',
+        'Pokemon API data organized in a beautiful UI. Light/Dark mode toggle. Dynamic routes. Sleek animations.',
       techStack: ['SvelteKit', 'Tailwind', 'Pokemon API'],
       github: 'https://github.com/btramel/svelte-pokedex',
       link: 'https://svelte-pokedex-lovat.vercel.app/',
@@ -379,7 +385,7 @@ const Projects = ({ fonts }) => {
       image: medium,
       title: 'Medium Clone',
       description:
-        'Blogging platform clone that takes advantage of NextJS server-side rendering and incremental static regeneration. Likes and comments.',
+        'I built a mock Medium blogging platform to check out NextJS server-side rendering and incremental static regeneration. Likes and comments.',
       techStack: ['NextJS', 'TypeScript', 'Sanity', 'Tailwind'],
       github: 'https://github.com/btramel/blog',
       link: 'https://blog-btramel.vercel.app',
@@ -389,7 +395,76 @@ const Projects = ({ fonts }) => {
     <div className='flex flex-col min-h-screen justify-center py-40'>
       <NumberedHeading number='.03' title="Things I've Built" />
 
-      <div className='flex flex-col gap-24'>
+      {/* mobile screens */}
+      <div className='flex md:hidden flex-col gap-24'>
+        {projects.map((project, i) => (
+          <div key={i} className='flex flex-col text-white'>
+            <div className={`py-4`}>
+              <div className={`flex flex-col gap-4 h-[80%] w-full`}>
+                <div className={`flex flex-col gap-1`}>
+                  <div className={fonts.accent}>Featured Project</div>
+                  <div className={`${fonts.primaryHeading} text-2xl`}>
+                    {project.title}
+                  </div>
+                </div>
+                <div className={`relative aspect-video z-3 rounded-xl `}>
+                  <a
+                    href={project.link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <Image
+                      src={project.image}
+                      alt='image'
+                      className='rounded-lg'
+                      fill
+                    />
+                  </a>
+                </div>
+                <div
+                  className={`${fonts.base} w-full z-20 bg-[#011f38] p-6 aspect-4/5 rounded-md shadow-md shadow-black/70`}
+                >
+                  {project.description}
+                </div>
+                <ul className='flex flex-row gap-5 font-mono text-gray-400 text-sm z-4'>
+                  {project.techStack.map((tech, i) => (
+                    <li key={i}>{tech}</li>
+                  ))}
+                </ul>
+                <div className='flex flex-row gap-6'>
+                  {project.github ? (
+                    <a
+                      className='text-gray-200 cursor-none'
+                      aria-label='GitHub'
+                      title='GitHub'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      href={project.github}
+                    >
+                      <FiGithub className='h-[20px] w-[20px]' />
+                    </a>
+                  ) : null}
+                  {project.link ? (
+                    <a
+                      className='text-gray-200 cursor-none'
+                      aria-label='External Link'
+                      title='External Link'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      href={project.link}
+                    >
+                      <FiExternalLink className='h-[20px] w-[20px]' />
+                    </a>
+                  ) : null}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* desktop screens */}
+      <div className='hidden md:flex flex-col gap-24'>
         {projects.map((project, i) => (
           <div
             key={project.title}
@@ -471,6 +546,8 @@ const Projects = ({ fonts }) => {
                       className='text-gray-200 hover:text-[#05BFDB] cursor-none'
                       aria-label='GitHub'
                       title='GitHub'
+                      target='_blank'
+                      rel='noopener noreferrer'
                       href={project.github}
                     >
                       <FiGithub className='h-[20px] w-[20px]' />
@@ -481,6 +558,8 @@ const Projects = ({ fonts }) => {
                       className='text-gray-200 hover:text-[#05BFDB] cursor-none'
                       aria-label='External Link'
                       title='External Link'
+                      target='_blank'
+                      rel='noopener noreferrer'
                       href={project.link}
                     >
                       <FiExternalLink className='h-[20px] w-[20px]' />
