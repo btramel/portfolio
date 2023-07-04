@@ -18,6 +18,7 @@ import medium from '../public/images/medium.jpg'
 import minn from '../public/images/MINN.jpeg'
 import pokedex from '../public/images/pokedex.jpg'
 import allstar from '../public/images/new.gif'
+import avi from '../public/images/avi.jpeg'
 
 const Home = () => {
   const navItems = [
@@ -80,7 +81,7 @@ const Home = () => {
         <section
           id='about'
           ref={ref2}
-          className='mt-[3px] min-h-[800px] h-[101vh] w-full bg-[#0B192E] px-[2rem] sm:px-[5%] lg:px-[15%]'
+          className='mt-[3px] min-h-[800px] h-full w-full bg-[#0B192E] px-[2rem] sm:px-[5%] lg:px-[15%]'
         >
           <About fonts={fonts} />
         </section>
@@ -182,8 +183,8 @@ const Hero = ({ fonts }) => {
       </div>
       <motion.p variants={item} className={`md:max-w-[65%] ${fonts.base} pb-4`}>
         More formally, I&apos;m a Front End Developer for the Minnesota
-        Timberwolves & Lynx. I thrive at designing and building engaging
-        interactive experiences.
+        Timberwolves & Lynx. I design and build engaging interactive
+        experiences.
       </motion.p>
       <motion.div
         variants={item}
@@ -291,7 +292,7 @@ const NumberedHeading = ({ number, title }) => {
       style={{
         fontSize: 'clamp(22px, 4vw, 28px)',
       }}
-      className='flex flex-row flex-nowrap whitespace-nowrap gap-2 items-center pb-6'
+      className='flex flex-row flex-nowrap whitespace-nowrap gap-2 items-center pb-6 tracking-tight'
     >
       <div className={`text-[#05BFDB] text-lg font-mono`}>{number}</div>
       <div className={`text-gray-400 font-bold font-sans`}>{title}</div>
@@ -304,7 +305,7 @@ const NumberedHeading = ({ number, title }) => {
 
 const About = ({ fonts }) => {
   return (
-    <div className='flex flex-col min-h-screen justify-center'>
+    <div className='flex flex-col gap-4 min-h-screen justify-center'>
       <NumberedHeading number={'02.'} title={'About Me'} />
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -313,32 +314,45 @@ const About = ({ fonts }) => {
         transition={{ ease: 'easeOut', duration: 1, delay: 0.75 }}
         className={`flex flex-col gap-6 ${fonts.base}`}
       >
-        <p className='leading-normal font-light'>
-          Hey there! My name is Brad and I build web experiences for the
-          Minnesota Timberwolves & Lynx digital marketing team. I assume you
-          want to know a little something about how I got here.
-        </p>
-        <p className='leading-normal font-light'>
-          My professional life used to be an amalgam of side gigs — I managed
-          projects for a construction company, wrote copy for an e-commerce
-          giant, and even detoured to law school! I taught myself web
-          development a few years ago and finally found the spark I had been
-          searching for. Coding enabled me to solve real-world problems,
-          scratched my creative itch, and empowered me to learn constantly. I
-          never looked back.
-        </p>
-        <p className='leading-normal font-light'>
-          Now I use my writing chops, eye for design, and endless curiosity
-          every day to build and design pixel-perfect websites. I have developed
-          a knack for developing beautiful, performant, responsive React UIs
-          that leverage API data.
-        </p>
-        <p className='leading-normal font-light'>
-          A few technologies I&apos;ve been working with recently: JavaScript
-          (ES6+), React, Next, Tailwind, Framer Motion, Figma. Going forward I
-          aim add animation libraries like ThreeJS, data visualization libraries
-          like D3, and low-code tools like Webflow to my ever-growing toolbelt.
-        </p>
+        <div className='flex flex-col sm:flex-row gap-8'>
+          <div className='flex flex-col gap-6 max-w-[600px] leading-relaxed tracking-[.01rem]'>
+            <p className=' font-light'>
+              Hey there! My name is Brad and I build web experiences for the
+              Minnesota Timberwolves & Lynx digital marketing team. I assume you
+              want to know a little something about how I got here.
+            </p>
+            <p className=' font-light'>
+              My professional life used to be an amalgam of side gigs — I
+              managed projects for a construction company, wrote copy for an
+              e-commerce giant, and even detoured to law school! I taught myself
+              web development a few years ago and finally found the spark I had
+              been searching for. Coding enabled me to solve real-world
+              problems, scratched my creative itch, and empowered me to learn
+              constantly. I never looked back.
+            </p>
+            <p className=' font-light'>
+              Now I use my writing chops, eye for design, and endless curiosity
+              every day to build and design pixel-perfect websites. I have
+              developed a knack for developing beautiful, performant, responsive
+              React UIs that leverage API data.
+            </p>
+            <p className=' font-light'>
+              A few technologies I&apos;ve been working with recently:
+              JavaScript (ES6+), React, Next, Tailwind, Framer Motion, Figma.
+              Going forward I aim add animation libraries like ThreeJS, data
+              visualization libraries like D3, and low-code tools like Webflow
+              to my ever-growing toolbelt.
+            </p>
+          </div>
+          <div className='relative aspect-square my-auto w-full h-full rounded-lg bg-[#05BFDB]/50'>
+            <Image
+              src={avi}
+              alt='brad tramel'
+              className='rounded-lg mix-blend-overlay'
+              fill
+            />
+          </div>
+        </div>
       </motion.div>
     </div>
   )
@@ -348,26 +362,26 @@ const Projects = ({ fonts }) => {
   const projects = [
     {
       image: jaden,
-      title: 'Bad Night Microsite',
+      title: 'All-Defense Team Campaign',
       description:
-        "Minnesota Timberwolves forward Jaden McDaniels said he loves making the NBA's best have a 'bad night.' This microsite, built to encourage his inclusion on the All-Defensive team, takes that quote and runs with it.",
+        "Minnesota Timberwolves forward Jaden McDaniels said he loves making the NBA's best players have a 'bad night.' This microsite, built to encourage his inclusion on the All-Defensive team, takes that quote and runs with it.",
       techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
       link: 'https://timberwolves.com/badnight',
     },
     {
       image: minn,
-      title: 'City Edition Microsite',
+      title: 'City Edition Uniform Unveil',
       description:
         'This microsite, built to reveal the 2022-23 City-Edition uniform, is a style guide made interactive.',
-      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
+      techStack: ['NextJS', 'Tailwind', 'Framer Motion', 'APIs'],
       link: 'https://timberwolves.com/canvas',
     },
     {
       image: allstar,
-      title: 'All-Star Microsite',
+      title: 'All-Star Campaign',
       description:
         'This microsite was part of the campaign that helped send Anthony Edwards to the 2023 All-Star Game. Site has since been redirected.',
-      techStack: ['NextJS', 'Tailwind', 'Airtable API', 'Framer Motion'],
+      techStack: ['NextJS', 'Tailwind', 'Airtable', 'Framer Motion', 'APIs'],
     },
     {
       image: pokedex,
@@ -419,7 +433,7 @@ const Projects = ({ fonts }) => {
                   </a>
                 </div>
                 <div
-                  className={`${fonts.base} w-full z-20 bg-[#011f38] p-6 aspect-4/5 rounded-md shadow-md shadow-black/70`}
+                  className={`${fonts.base} w-full z-20 bg-[#011f38] p-6 aspect-4/5 rounded-md shadow-md shadow-black/70 leading-relaxed tracking-[.01rem]`}
                 >
                   {project.description}
                 </div>
@@ -528,7 +542,7 @@ const Projects = ({ fonts }) => {
                 <div
                   className={`${fonts.base} w-full lg:w-[110%] ${
                     i % 2 !== 0 ? 'text-right' : 'text-left'
-                  } z-20 bg-[#011f38] p-6 aspect-4/5 rounded-md shadow-md shadow-black/70`}
+                  } z-20 bg-[#011f38] p-6 aspect-4/5 rounded-md shadow-md shadow-black/70 leading-relaxed tracking-[.01rem]`}
                 >
                   {project.description}
                 </div>
@@ -599,7 +613,7 @@ const Contact = ({ fonts }) => {
         <h2 className={`${fonts.primaryHeading} text-[2.25rem]`}>
           Don&apos;t Be Shy
         </h2>
-        <p className={fonts.base}>
+        <p className={`${fonts.base} leading-relaxed tracking-[.01rem]`}>
           My inbox is open. I&apos;m always happy to answer a question or chat
           about code.
         </p>
