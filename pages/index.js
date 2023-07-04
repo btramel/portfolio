@@ -17,7 +17,7 @@ import jaden from '../public/images/jaden.png'
 import medium from '../public/images/medium.jpg'
 import minn from '../public/images/MINN.jpeg'
 import pokedex from '../public/images/pokedex.jpg'
-import allstar from '../public/images/vote.jpeg'
+import allstar from '../public/images/new.gif'
 
 const Home = () => {
   const navItems = [
@@ -316,30 +316,28 @@ const About = ({ fonts }) => {
         <p className='leading-normal font-light'>
           Hey there! My name is Brad and I build web experiences for the
           Minnesota Timberwolves & Lynx digital marketing team. I assume you
-          want to know a little something about how I got here, how I built
-          this.
+          want to know a little something about how I got here.
         </p>
         <p className='leading-normal font-light'>
           My professional life used to be an amalgam of side gigs — I managed
-          projects for a construction company, wrote copy for a giant e-commerce
-          company, even detoured to law school! I taught myself web development
-          a few years ago and finally found the professional spark I had been
+          projects for a construction company, wrote copy for an e-commerce
+          giant, and even detoured to law school! I taught myself web
+          development a few years ago and finally found the spark I had been
           searching for. Coding enabled me to solve real-world problems,
           scratched my creative itch, and empowered me to learn constantly. I
           never looked back.
         </p>
         <p className='leading-normal font-light'>
-          Now I use my writing chops, eye for design, and endless curiosity to
-          inform my craft: building and designing pixel-perfect websites. I have
-          become skilled at developing beautiful, performant, responsive React
-          UIs that leverage API data. I keep the user experience at the
-          forefront of my mind as I build every project. Going forward I aim add
-          animation libraries like ThreeJS, data visualization libraries like
-          D3, and low-code tools like Webflow to my toolbelt. All in due time.
+          Now I use my writing chops, eye for design, and endless curiosity
+          every day to build and design pixel-perfect websites. I have developed
+          a knack for developing beautiful, performant, responsive React UIs
+          that leverage API data.
         </p>
         <p className='leading-normal font-light'>
           A few technologies I&apos;ve been working with recently: JavaScript
-          (ES6+), React, Next, Tailwind, Framer Motion.
+          (ES6+), React, Next, Tailwind, Framer Motion, Figma. Going forward I
+          aim add animation libraries like ThreeJS, data visualization libraries
+          like D3, and low-code tools like Webflow to my ever-growing toolbelt.
         </p>
       </motion.div>
     </div>
@@ -370,7 +368,6 @@ const Projects = ({ fonts }) => {
       description:
         'This microsite was part of the campaign that helped send Anthony Edwards to the 2023 All-Star Game. Site has since been redirected.',
       techStack: ['NextJS', 'Tailwind', 'Airtable API', 'Framer Motion'],
-      link: 'https://timberwolves.com/allstar',
     },
     {
       image: pokedex,
