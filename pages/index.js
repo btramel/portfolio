@@ -19,6 +19,7 @@ import minn from '../public/images/MINN.jpeg'
 import pokedex from '../public/images/pokedex.jpg'
 import allstar from '../public/images/new.gif'
 import avi from '../public/images/avi.jpeg'
+import UTMWrapper from '../components/UTMWrapper'
 
 const Home = () => {
   const navItems = [
@@ -102,7 +103,9 @@ const Home = () => {
         <section className='absolute bottom-2 w-full flex flex-col gap-1 font-mono text-gray-200 text-center'>
           <p className='text-[.5rem]'>Built with &#128153; by Brad Tramel</p>
           <p className='text-[.5rem]'>
-            Design inspired by{' '}
+            <UTMWrapper defaults={'?defaults'} href={'https://www.google.com'}>
+              Design inspired by
+            </UTMWrapper>
             <a
               href='https://brittanychiang.com/'
               target='_blank'
@@ -361,20 +364,20 @@ const About = ({ fonts }) => {
 const Projects = ({ fonts }) => {
   const projects = [
     {
-      image: jaden,
-      title: 'All-Defense Team Campaign',
-      description:
-        "Minnesota Timberwolves forward Jaden McDaniels said he loves making the NBA's best players have a 'bad night.' This microsite, built to encourage his inclusion on the All-Defensive team, takes that quote and runs with it.",
-      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
-      link: 'https://timberwolves.com/badnight',
-    },
-    {
       image: minn,
-      title: 'City Edition Uniform Unveil',
+      title: 'City Edition Unveil',
       description:
         'This microsite, built to reveal the 2022-23 City-Edition uniform, is a style guide made interactive.',
       techStack: ['NextJS', 'Tailwind', 'Framer Motion', 'APIs'],
       link: 'https://timberwolves.com/canvas',
+    },
+    {
+      image: jaden,
+      title: 'All-Defense Campaign',
+      description:
+        "Minnesota Timberwolves forward Jaden McDaniels said he loves making the NBA's best players have a 'bad night.' This microsite, built to encourage his inclusion on the All-Defensive team, takes that quote and runs with it.",
+      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
+      link: 'https://timberwolves.com/badnight',
     },
     {
       image: allstar,
