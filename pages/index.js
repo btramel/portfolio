@@ -19,7 +19,6 @@ import minn from '../public/images/MINN.jpeg'
 import pokedex from '../public/images/pokedex.jpg'
 import allstar from '../public/images/new.gif'
 import avi from '../public/images/avi.jpeg'
-import UTMWrapper from '../components/UTMWrapper'
 
 const Home = () => {
   const navItems = [
@@ -103,9 +102,7 @@ const Home = () => {
         <section className='absolute bottom-2 w-full flex flex-col gap-1 font-mono text-gray-200 text-center'>
           <p className='text-[.5rem]'>Built with &#128153; by Brad Tramel</p>
           <p className='text-[.5rem]'>
-            <UTMWrapper defaults={'?defaults'} href={'https://www.google.com'}>
-              Design inspired by
-            </UTMWrapper>
+            Design inspired by
             <a
               href='https://brittanychiang.com/'
               target='_blank'
