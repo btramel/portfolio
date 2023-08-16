@@ -15,10 +15,11 @@ import {
 } from 'react-icons/fi'
 import jaden from '../public/images/jaden.png'
 import medium from '../public/images/medium.jpg'
-import minn from '../public/images/MINN.jpeg'
+import minn from '../public/images/city-cropped.png'
 import pokedex from '../public/images/pokedex.jpg'
 import allstar from '../public/images/new.gif'
 import avi from '../public/images/avi.jpeg'
+import city from '../public/images/city.jpg'
 
 const Home = () => {
   const navItems = [
@@ -334,23 +335,11 @@ const About = ({ fonts }) => {
               Now I use my writing chops, eye for design, and endless curiosity
               every day to build and design pixel-perfect websites. I have
               developed a knack for developing beautiful, performant, responsive
-              React UIs that leverage API data.
-            </p>
-            <p className=' font-light'>
-              A few technologies I&apos;ve been working with recently:
-              JavaScript (ES6+), React, Next, Tailwind, Framer Motion, Figma.
-              Going forward I aim add animation libraries like ThreeJS, data
-              visualization libraries like D3, and low-code tools like Webflow
-              to my ever-growing toolbelt.
+              React UIs.
             </p>
           </div>
-          <div className='relative aspect-square my-auto w-full h-full rounded-lg bg-[#05BFDB]/50'>
-            <Image
-              src={avi}
-              alt='brad tramel'
-              className='rounded-lg mix-blend-overlay'
-              fill
-            />
+          <div className='relative max-w-[500px] aspect-square my-auto w-full h-full rounded-lg'>
+            <Image src={avi} alt='brad tramel' className='rounded-lg' fill />
           </div>
         </div>
       </motion.div>
@@ -361,26 +350,34 @@ const About = ({ fonts }) => {
 const Projects = ({ fonts }) => {
   const projects = [
     {
-      image: minn,
-      title: 'City Edition Unveil',
+      image: city,
+      title: "'23 City Edition Unveil",
       description:
-        'This microsite, built to reveal the 2022-23 City-Edition uniform, is a style guide made interactive.',
+        'This site unveiled the 2023-24 City Edition Uniform, inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
+      techStack: ['NextJS', 'Tailwind', 'Framer Motion', 'Lottie'],
+      link: 'https://www.nba.com/timberwolves/lakelife',
+    },
+    {
+      image: minn,
+      title: "'22 City Edition Unveil",
+      description:
+        "This site debuted the 2022-23 City Edition uniform, a celebration of Minnesota's creative community.",
       techStack: ['NextJS', 'Tailwind', 'Framer Motion', 'APIs'],
-      link: 'https://timberwolves.com/canvas',
+      link: 'https://www.nba.com/timberwolves/canvas',
     },
     {
       image: jaden,
       title: 'All-Defense Campaign',
       description:
-        "Minnesota Timberwolves forward Jaden McDaniels said he loves making the NBA's best players have a 'bad night.' This microsite, built to encourage his inclusion on the All-Defensive team, takes that quote and runs with it.",
+        "Minnesota Timberwolves forward Jaden McDaniels loves making the NBA's best players have a 'bad night.' This microsite, built to encourage his inclusion on the All-Defensive team, takes that quote and runs with it.",
       techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
-      link: 'https://timberwolves.com/badnight',
+      link: 'https://www.nba.com/timberwolves/badnight',
     },
     {
       image: allstar,
       title: 'All-Star Campaign',
       description:
-        'This microsite was part of the campaign that helped send Anthony Edwards to the 2023 All-Star Game. Site has since been redirected.',
+        'This microsite was part of the campaign that helped send Anthony Edwards to the 2023 All-Star Game. Site has since been archived.',
       techStack: ['NextJS', 'Tailwind', 'Airtable', 'Framer Motion', 'APIs'],
     },
     {
