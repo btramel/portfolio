@@ -16,10 +16,13 @@ import {
 import jaden from '../public/images/jaden.png'
 import medium from '../public/images/medium.jpg'
 import minn from '../public/images/city-cropped.png'
-import pokedex from '../public/images/pokedex.jpg'
+// import pokedex from '../public/images/pokedex.jpg'
 import allstar from '../public/images/new.gif'
-import avi from '../public/images/avi.jpeg'
+// import avi from '../public/images/avi.jpeg'
+import smirk from '../public/images/smirk.jpg'
 import city from '../public/images/city.jpg'
+import community from '../public/images/community.png'
+import classic from '../public/images/classic.jpg'
 
 const Home = () => {
   const navItems = [
@@ -317,12 +320,14 @@ const About = ({ fonts }) => {
       >
         <div className='flex flex-col sm:flex-row gap-8'>
           <div className='flex flex-col gap-6 max-w-[600px] leading-relaxed tracking-[.01rem]'>
-            <p className=' font-light'>
+            <p className='font-light'>
               Hey there! My name is Brad and I build web experiences for the
-              Minnesota Timberwolves & Lynx digital marketing team. I assume you
-              want to know a little something about how I got here.
+              Minnesota Timberwolves & Lynx digital marketing team. I build
+              flashy landing pages to get fans hyped and clean React UIs that
+              make buying tickets a positive experience for those fans.
             </p>
-            <p className=' font-light'>
+            <p className='font-light'>
+              I assume you want to know a little something about how I got here.
               My professional life used to be an amalgam of side gigs — I
               managed projects for a construction company, wrote copy for an
               e-commerce giant, and even detoured to law school! I taught myself
@@ -331,15 +336,13 @@ const About = ({ fonts }) => {
               problems, scratched my creative itch, and empowered me to learn
               constantly. I never looked back.
             </p>
-            <p className=' font-light'>
+            <p className='font-light'>
               Now I use my writing chops, eye for design, and endless curiosity
-              every day to build and design pixel-perfect websites. I have
-              developed a knack for developing beautiful, performant, responsive
-              React UIs.
+              every day to build and design pixel-perfect websites.
             </p>
           </div>
-          <div className='relative max-w-[500px] aspect-square my-auto w-full h-full rounded-lg'>
-            <Image src={avi} alt='brad tramel' className='rounded-lg' fill />
+          <div className='relative max-w-[500px] aspect-[1170/1454] object-contain object-top my-auto w-full h-full rounded-lg'>
+            <Image src={smirk} alt='brad tramel' className='rounded-lg' fill />
           </div>
         </div>
       </motion.div>
@@ -350,18 +353,34 @@ const About = ({ fonts }) => {
 const Projects = ({ fonts }) => {
   const projects = [
     {
-      image: city,
-      title: "'23 City Edition Unveil",
+      image: classic,
+      title: "'23 Classic Edition LP",
       description:
-        'This site unveiled the 2023-24 City Edition Uniform, inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
+        "Featuring a trailing mouse cursor and clever pop-ups, this landing page puts a modern twist on 90's web design to unveil the Timberwolves' 35th Anniversary Classic Edition Uniforms.",
+      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
+      link: 'https://www.nba.com/timberwolves/classic',
+    },
+    {
+      image: community,
+      title: 'Community Hub',
+      description:
+        'I redesigned and rebuilt the web presence for the Timberwolves and Lynx Community Impact team. The new look and feel prioritizes organization and imagery, capturing the human connections and joy this team brings to the Twin Cities community.',
+      techStack: ['NextJS', 'Figma', 'Tailwind', 'Framer Motion'],
+      link: 'https://www.nba.com/timberwolves/community',
+    },
+    {
+      image: city,
+      title: "'23 City Edition LP",
+      description:
+        'This landing page uses animated SVGs and subtle gradients to celebrate the nautical 2023-24 City Edition Uniform, inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
       techStack: ['NextJS', 'Tailwind', 'Framer Motion', 'Lottie'],
       link: 'https://www.nba.com/timberwolves/lakelife',
     },
     {
       image: minn,
-      title: "'22 City Edition Unveil",
+      title: "'22 City Edition LP",
       description:
-        "This site debuted the 2022-23 City Edition uniform, a celebration of Minnesota's creative community.",
+        "This landing page debuted the 2022-23 City Edition uniform, a celebration of Minnesota's creative community.",
       techStack: ['NextJS', 'Tailwind', 'Framer Motion', 'APIs'],
       link: 'https://www.nba.com/timberwolves/canvas',
     },
@@ -380,15 +399,15 @@ const Projects = ({ fonts }) => {
         'This microsite was part of the campaign that helped send Anthony Edwards to the 2023 All-Star Game. Site has since been archived.',
       techStack: ['NextJS', 'Tailwind', 'Airtable', 'Framer Motion', 'APIs'],
     },
-    {
-      image: pokedex,
-      title: 'Pokedex',
-      description:
-        'Pokemon API data organized in a beautiful UI. Light/Dark mode toggle. Dynamic routes. Sleek animations.',
-      techStack: ['SvelteKit', 'Tailwind', 'Pokemon API'],
-      github: 'https://github.com/btramel/svelte-pokedex',
-      link: 'https://svelte-pokedex-lovat.vercel.app/',
-    },
+    // {
+    //   image: pokedex,
+    //   title: 'Pokedex',
+    //   description:
+    //     'Pokemon API data organized in a beautiful UI. Light/Dark mode toggle. Dynamic routes. Sleek animations.',
+    //   techStack: ['SvelteKit', 'Tailwind', 'Pokemon API'],
+    //   github: 'https://github.com/btramel/svelte-pokedex',
+    //   link: 'https://svelte-pokedex-lovat.vercel.app/',
+    // },
     {
       image: medium,
       title: 'Medium Clone',
@@ -611,8 +630,8 @@ const Contact = ({ fonts }) => {
           Don&apos;t Be Shy
         </h2>
         <p className={`${fonts.base} leading-relaxed tracking-[.01rem]`}>
-          My inbox is open. I&apos;m always happy to answer a question or chat
-          about code.
+          My inbox is open. I&apos;m always happy to chat about code, design, or
+          nothing in particular.
         </p>
         <Button
           to={
