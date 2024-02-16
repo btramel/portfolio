@@ -186,7 +186,7 @@ const Hero = ({ fonts }) => {
         </motion.h1>
       </div>
       <motion.p variants={item} className={`md:max-w-[65%] ${fonts.base} pb-4`}>
-        More formally, I&apos;m a Front End Developer for the Minnesota
+        More formally, I&apos;m a Full Stack Web Developer for the Minnesota
         Timberwolves & Lynx. I design and build engaging interactive
         experiences.
       </motion.p>
