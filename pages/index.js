@@ -14,15 +14,18 @@ import {
   FiExternalLink,
 } from 'react-icons/fi'
 import jaden from '../public/images/jaden.png'
-import medium from '../public/images/medium.jpg'
-import minn from '../public/images/city-cropped.png'
+// import medium from '../public/images/medium.jpg'
+// import minn from '../public/images/city-cropped.png'
 // import pokedex from '../public/images/pokedex.jpg'
-import allstar from '../public/images/new.gif'
+// import allstar from '../public/images/new.gif'
 // import avi from '../public/images/avi.jpeg'
 import smirk from '../public/images/smirk.jpg'
 import city from '../public/images/city.jpg'
 import community from '../public/images/community.png'
 import classic from '../public/images/classic.jpg'
+import playoffs from '../public/images/playoffs.png'
+import howler from '../public/images/howls.png'
+import behere from '../public/images/behere.png'
 
 const Home = () => {
   const navItems = [
@@ -353,6 +356,14 @@ const About = ({ fonts }) => {
 const Projects = ({ fonts }) => {
   const projects = [
     {
+      image: city,
+      title: "'23 City Edition LP",
+      description:
+        'This landing page was part of a Hashtag Sports Award-nominated marketing campaign. Using animated SVGs and subtle gradients, it celebrates a uniform inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
+      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
+      link: 'https://www.nba.com/timberwolves/lakelife',
+    },
+    {
       image: classic,
       title: "'23 Classic Edition LP",
       description:
@@ -361,28 +372,28 @@ const Projects = ({ fonts }) => {
       link: 'https://www.nba.com/timberwolves/classic',
     },
     {
-      image: community,
-      title: 'Community Hub',
+      image: behere,
+      title: 'Be Here',
       description:
-        'I redesigned and rebuilt the web presence for the Timberwolves and Lynx Community Impact team. The new look and feel prioritizes organization and imagery, capturing the human connections and joy this team brings to the Twin Cities community.',
+        'I designed and built a fan-focused social media experience in our app. It integrates posts from Instagram and Twitter to help folks understand the excitement of being at Target Center for a game.',
       techStack: ['NextJS', 'Figma', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/community',
+      link: 'https://www.nba.com/timberwolves/app/behere',
     },
     {
-      image: city,
-      title: "'23 City Edition LP",
+      image: howler,
+      title: 'Howler',
       description:
-        'This landing page uses animated SVGs and subtle gradients to celebrate the nautical 2023-24 City Edition Uniform, inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
-      techStack: ['NextJS', 'Tailwind', 'Framer Motion', 'Lottie'],
-      link: 'https://www.nba.com/timberwolves/lakelife',
+        'Sometimes folks just want to have fun. Inspired by the real-life, fan-favorite Howler giveaway item, I created a virtual Howler for fans who missed the giveaway to use in their Timberwolves app.',
+      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
+      link: 'https://www.nba.com/timberwolves/app/howl',
     },
     {
-      image: minn,
-      title: "'22 City Edition LP",
+      image: playoffs,
+      title: 'Playoffs Hub',
       description:
-        "This landing page debuted the 2022-23 City Edition uniform, a celebration of Minnesota's creative community.",
-      techStack: ['NextJS', 'Tailwind', 'Framer Motion', 'APIs'],
-      link: 'https://www.nba.com/timberwolves/canvas',
+        "I built a flexible, dynamic page that served as the public's one-stop shop for tickets, content, and scores during the Timberwolves' playoff run to the Western Conference Championship.",
+      techStack: ['NextJS', 'Tailwind', 'APIs'],
+      link: 'https://www.nba.com/timberwolves/playoffs',
     },
     {
       image: jaden,
@@ -393,12 +404,28 @@ const Projects = ({ fonts }) => {
       link: 'https://www.nba.com/timberwolves/badnight',
     },
     {
-      image: allstar,
-      title: 'All-Star Campaign',
+      image: community,
+      title: 'Community Hub',
       description:
-        'This microsite was part of the campaign that helped send Anthony Edwards to the 2023 All-Star Game. Site has since been archived.',
-      techStack: ['NextJS', 'Tailwind', 'Airtable', 'Framer Motion', 'APIs'],
+        'I redesigned and rebuilt the web presence for the Timberwolves and Lynx Community Impact team. The new look and feel prioritizes organization and imagery, capturing the human connections and joy this team brings to the Twin Cities community.',
+      techStack: ['NextJS', 'Figma', 'Tailwind', 'Framer Motion'],
+      link: 'https://www.nba.com/timberwolves/community',
     },
+    // {
+    //   image: allstar,
+    //   title: 'All-Star Campaign',
+    //   description:
+    //     'This microsite was part of the campaign that helped send Anthony Edwards to the 2023 All-Star Game. Site has since been archived.',
+    //   techStack: ['NextJS', 'Tailwind', 'Airtable', 'Framer Motion', 'APIs'],
+    // },
+    // {
+    //   image: minn,
+    //   title: "'22 City Edition LP",
+    //   description:
+    //     "This landing page debuted the 2022-23 City Edition uniform, a celebration of Minnesota's creative community.",
+    //   techStack: ['NextJS', 'Tailwind', 'Framer Motion', 'APIs'],
+    //   link: 'https://www.nba.com/timberwolves/canvas',
+    // },
     // {
     //   image: pokedex,
     //   title: 'Pokedex',
@@ -408,15 +435,15 @@ const Projects = ({ fonts }) => {
     //   github: 'https://github.com/btramel/svelte-pokedex',
     //   link: 'https://svelte-pokedex-lovat.vercel.app/',
     // },
-    {
-      image: medium,
-      title: 'Medium Clone',
-      description:
-        'I built a mock Medium blogging platform to check out NextJS server-side rendering and incremental static regeneration. Likes and comments.',
-      techStack: ['NextJS', 'TypeScript', 'Sanity', 'Tailwind'],
-      github: 'https://github.com/btramel/blog',
-      link: 'https://blog-btramel.vercel.app',
-    },
+    // {
+    //   image: medium,
+    //   title: 'Medium Clone',
+    //   description:
+    //     'I built a mock Medium blogging platform to check out NextJS server-side rendering and incremental static regeneration. Likes and comments.',
+    //   techStack: ['NextJS', 'TypeScript', 'Sanity', 'Tailwind'],
+    //   github: 'https://github.com/btramel/blog',
+    //   link: 'https://blog-btramel.vercel.app',
+    // },
   ]
   return (
     <div className='flex flex-col min-h-screen justify-center py-40'>
