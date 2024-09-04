@@ -14,11 +14,6 @@ import {
   FiExternalLink,
 } from 'react-icons/fi'
 import jaden from '../public/images/jaden.png'
-// import medium from '../public/images/medium.jpg'
-// import minn from '../public/images/city-cropped.png'
-// import pokedex from '../public/images/pokedex.jpg'
-// import allstar from '../public/images/new.gif'
-// import avi from '../public/images/avi.jpeg'
 import smirk from '../public/images/smirk.jpg'
 import city from '../public/images/city.jpg'
 import community from '../public/images/community.png'
@@ -26,6 +21,7 @@ import classic from '../public/images/classic.jpg'
 import playoffs from '../public/images/playoffs.png'
 import howler from '../public/images/howls.png'
 import behere from '../public/images/behere.png'
+import single from '../public/images/single.jpg'
 
 const Home = () => {
   const navItems = [
@@ -66,7 +62,7 @@ const Home = () => {
   }, [entry, entry2, entry3, entry4])
 
   return (
-    <div className={`h-screen flex`}>
+    <div className='min-h-screen flex bg-[#0B192E] bg-grid-small-[#efefef]/5'>
       <AnimatedNav
         fonts={fonts}
         navItems={navItems}
@@ -77,18 +73,18 @@ const Home = () => {
       <SocialsSidebar />
       <EmailSidebar />
 
-      <main className='bg-[#0B192E] h-max w-screen flex flex-col cursor-none relative'>
+      <main className=' h-max w-screen flex flex-col cursor-none relative'>
         <section
           id='home'
           ref={ref}
-          className='mt-[1px] min-h-[800px] h-[100vh] w-full bg-[#0B192E] px-[2rem] sm:px-[5%] lg:px-[15%]'
+          className='mt-[1px] min-h-[800px] h-[100vh] w-full px-[2rem] sm:px-[5%] lg:px-[15%]'
         >
           <Hero fonts={fonts} />
         </section>
         <section
           id='about'
           ref={ref2}
-          className='mt-[3px] min-h-[800px] h-full w-full bg-[#0B192E] px-[2rem] sm:px-[5%] lg:px-[15%]'
+          className='mt-[3px] min-h-[800px] h-full w-full px-[2rem] sm:px-[5%] lg:px-[15%]'
         >
           <About fonts={fonts} />
         </section>
@@ -102,7 +98,7 @@ const Home = () => {
         <section
           id='contact'
           ref={ref4}
-          className='mt-[1px] min-h-[800px] h-[101vh] w-full bg-[#0B192E] px-[2rem] sm:px-[5%] lg:px-[15%]'
+          className='mt-[1px] min-h-[800px] h-[101vh] w-full bg-[#0B192E] bg-grid-small-[#efefef]/5 px-[2rem] sm:px-[5%] lg:px-[15%]'
         >
           <Contact fonts={fonts} />
         </section>
@@ -356,10 +352,18 @@ const About = ({ fonts }) => {
 const Projects = ({ fonts }) => {
   const projects = [
     {
+      image: single,
+      title: 'Single Game Tickets LP',
+      description:
+        'I redesigned and rebuilt our Single Game Tickets landing page, the primary point of sales for Timberwolves tickets. The overhauled site, with its clean interface and robust features, facilitated an impressive 66% year-over-year increase in ticket sales.',
+      techStack: ['NextJS', 'Tailwind', 'APIs'],
+      link: 'https://www.nba.com/timberwolves/single',
+    },
+    {
       image: city,
       title: "'23 City Edition LP",
       description:
-        'This landing page was part of a Hashtag Sports Award-nominated marketing campaign. Using animated SVGs and subtle gradients, it celebrates a uniform inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
+        'This landing page was the web component of a Hashtag Sports Award-nominated marketing campaign. Using animated SVGs and subtle gradients, it celebrates a uniform inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
       techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
       link: 'https://www.nba.com/timberwolves/lakelife',
     },

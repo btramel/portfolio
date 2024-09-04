@@ -50,8 +50,8 @@ const CustomCursor = () => {
         positionRef.current.destinationX = mouseX
         positionRef.current.destinationY = mouseY
       } else {
-        positionRef.current.distanceX = (mouseX - destinationX) * 0.3
-        positionRef.current.distanceY = (mouseY - destinationY) * 0.3
+        positionRef.current.distanceX = (mouseX - destinationX) * 0.2
+        positionRef.current.distanceY = (mouseY - destinationY) * 0.2
 
         // checking for negative values
         if (
