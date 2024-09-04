@@ -1,6 +1,13 @@
 /* eslint-disable react/display-name */
 /* eslint-disable react/prop-types */
+/* TO DO: */
+/* FIX MOBILE NAV */
+/* TEST SEO */
+
 import AnimatedNav from '/components/AnimatedNav'
+import useMeasure from 'react-use-measure'
+import Lenis from 'lenis'
+import SEO from '../components/SEO'
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import CustomCursor from '../components/CustomCursor'
@@ -24,6 +31,19 @@ import behere from '../public/images/behere.png'
 import single from '../public/images/single.jpg'
 
 const Home = () => {
+  let [ref, { width }] = useMeasure()
+
+  useEffect(() => {
+    const lenis = new Lenis()
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, [])
+
   const navItems = [
     {
       name: 'home',
@@ -44,7 +64,7 @@ const Home = () => {
 
   const [active, setActive] = useState(navItems[0].name)
 
-  const [ref, inView, entry] = useInView()
+  const [ref1, inView, entry] = useInView()
   const [ref2, inView2, entry2] = useInView({ initialInView: false })
   const [ref3, inView3, entry3] = useInView({ initialInView: false })
   const [ref4, inView4, entry4] = useInView({ initialInView: false })
@@ -62,61 +82,67 @@ const Home = () => {
   }, [entry, entry2, entry3, entry4])
 
   return (
-    <div className='min-h-screen flex bg-[#0B192E] bg-grid-small-[#efefef]/5'>
-      <AnimatedNav
-        fonts={fonts}
-        navItems={navItems}
-        active={active}
-        setActive={setActive}
-      />
-      <CustomCursor />
-      <SocialsSidebar />
-      <EmailSidebar />
+    <>
+      <SEO />
+      <div
+        ref={ref}
+        className='min-h-screen flex bg-[#0B192E] bg-grid-small-[#efefef]/5'
+      >
+        <AnimatedNav
+          fonts={fonts}
+          navItems={navItems}
+          active={active}
+          setActive={setActive}
+        />
+        {width > 750 && <CustomCursor />}
+        <SocialsSidebar />
+        <EmailSidebar />
 
-      <main className=' h-max w-screen flex flex-col cursor-none relative'>
-        <section
-          id='home'
-          ref={ref}
-          className='mt-[1px] min-h-[800px] h-[100vh] w-full px-[2rem] sm:px-[5%] lg:px-[15%]'
-        >
-          <Hero fonts={fonts} />
-        </section>
-        <section
-          id='about'
-          ref={ref2}
-          className='mt-[3px] min-h-[800px] h-full w-full px-[2rem] sm:px-[5%] lg:px-[15%]'
-        >
-          <About fonts={fonts} />
-        </section>
-        <section
-          id='work'
-          ref={ref3}
-          className='mt-[1px] min-h-[800px] sm:h-full w-full bg-[#0B192E] px-[2rem] sm:px-[5%] lg:px-[15%]'
-        >
-          <Projects fonts={fonts} />
-        </section>
-        <section
-          id='contact'
-          ref={ref4}
-          className='mt-[1px] min-h-[800px] h-[101vh] w-full bg-[#0B192E] bg-grid-small-[#efefef]/5 px-[2rem] sm:px-[5%] lg:px-[15%]'
-        >
-          <Contact fonts={fonts} />
-        </section>
-        <section className='absolute bottom-2 w-full flex flex-col gap-1 font-mono text-gray-200 text-center'>
-          <p className='text-[.5rem]'>Built with &#128153; by Brad Tramel</p>
-          <p className='text-[.5rem]'>
-            Design inspired by
-            <a
-              href='https://brittanychiang.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Brittany Chiang
-            </a>
-          </p>
-        </section>
-      </main>
-    </div>
+        <main className=' h-max w-screen flex flex-col cursor-none relative'>
+          <section
+            id='home'
+            ref={ref1}
+            className='mt-[1px] min-h-[800px] h-[100vh] w-full px-[2rem] sm:px-[5%] lg:px-[15%]'
+          >
+            <Hero fonts={fonts} />
+          </section>
+          <section
+            id='about'
+            ref={ref2}
+            className='mt-[3px] min-h-[800px] h-full w-full px-[2rem] sm:px-[5%] lg:px-[15%]'
+          >
+            <About fonts={fonts} />
+          </section>
+          <section
+            id='work'
+            ref={ref3}
+            className='mt-[1px] min-h-[800px] sm:h-full w-full bg-[#0B192E] px-[2rem] sm:px-[5%] lg:px-[15%]'
+          >
+            <Projects fonts={fonts} />
+          </section>
+          <section
+            id='contact'
+            ref={ref4}
+            className='mt-[1px] min-h-[800px] h-[101vh] w-full bg-[#0B192E] bg-grid-small-[#efefef]/5 px-[2rem] sm:px-[5%] lg:px-[15%]'
+          >
+            <Contact fonts={fonts} />
+          </section>
+          <section className='absolute bottom-2 w-full flex flex-col gap-1 font-mono text-gray-200 text-center'>
+            <p className='text-[.5rem]'>Built with &#128153; by Brad Tramel</p>
+            <p className='text-[.5rem]'>
+              Design inspired by
+              <a
+                href='https://brittanychiang.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Brittany Chiang
+              </a>
+            </p>
+          </section>
+        </main>
+      </div>
+    </>
   )
 }
 
@@ -320,24 +346,30 @@ const About = ({ fonts }) => {
         <div className='flex flex-col sm:flex-row gap-8'>
           <div className='flex flex-col gap-6 max-w-[600px] leading-relaxed tracking-[.01rem]'>
             <p className='font-light'>
-              Hey there! My name is Brad and I build web experiences for the
-              Minnesota Timberwolves & Lynx digital marketing team. I build
-              flashy landing pages to get fans hyped and clean React UIs that
-              make buying tickets a positive experience for those fans.
+              Hey there! My name is Brad. I build{' '}
+              <a
+                href='https://www.hashtagsports.com/awards/shortlist-2024/minnesota-timberwolves-city-edition-unveil'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                award-nominated
+              </a>{' '}
+              web experiences for the Minnesota Timberwolves & Lynx: flashy
+              landing pages to <a href='#city'>get fans hyped</a>, and clean
+              React UIs to facilitate a positive experience when those fans{' '}
+              <a href='#sgt'>buy tickets</a>, browse concessions, and interact
+              with the brand.
             </p>
             <p className='font-light'>
-              I assume you want to know a little something about how I got here.
               My professional life used to be an amalgam of side gigs — I
               managed projects for a construction company, wrote copy for an
-              e-commerce giant, and even detoured to law school! I taught myself
-              web development a few years ago and finally found the spark I had
-              been searching for. Coding enabled me to solve real-world
-              problems, scratched my creative itch, and empowered me to learn
-              constantly. I never looked back.
+              e-commerce giant, and even detoured to law school. When I taught
+              myself web development, I knew I had found the spark I had been
+              searching for. I never looked back.
             </p>
             <p className='font-light'>
               Now I use my writing chops, eye for design, and endless curiosity
-              every day to build and design pixel-perfect websites.
+              to build and design pixel-perfect websites.
             </p>
           </div>
           <div className='relative max-w-[500px] aspect-[1170/1454] object-contain object-top my-auto w-full h-full rounded-lg'>
@@ -354,6 +386,7 @@ const Projects = ({ fonts }) => {
     {
       image: single,
       title: 'Single Game Tickets LP',
+      id: 'sgt',
       description:
         'I redesigned and rebuilt our Single Game Tickets landing page, the primary point of sales for Timberwolves tickets. The overhauled site, with its clean interface and robust features, facilitated an impressive 66% year-over-year increase in ticket sales.',
       techStack: ['NextJS', 'Tailwind', 'APIs'],
@@ -361,6 +394,7 @@ const Projects = ({ fonts }) => {
     },
     {
       image: city,
+      id: 'city',
       title: "'23 City Edition LP",
       description:
         'This landing page was the web component of a Hashtag Sports Award-nominated marketing campaign. Using animated SVGs and subtle gradients, it celebrates a uniform inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
@@ -369,6 +403,7 @@ const Projects = ({ fonts }) => {
     },
     {
       image: classic,
+      id: 'classic',
       title: "'23 Classic Edition LP",
       description:
         "Featuring a trailing mouse cursor and clever pop-ups, this landing page puts a modern twist on 90's web design to unveil the Timberwolves' 35th Anniversary Classic Edition Uniforms.",
@@ -377,6 +412,7 @@ const Projects = ({ fonts }) => {
     },
     {
       image: behere,
+      id: 'behere',
       title: 'Be Here',
       description:
         'I designed and built a fan-focused social media experience in our app. It integrates posts from Instagram and Twitter to help folks understand the excitement of being at Target Center for a game.',
@@ -385,6 +421,7 @@ const Projects = ({ fonts }) => {
     },
     {
       image: howler,
+      id: 'howler',
       title: 'Howler',
       description:
         'Sometimes folks just want to have fun. Inspired by the real-life, fan-favorite Howler giveaway item, I created a virtual Howler for fans who missed the giveaway to use in their Timberwolves app.',
@@ -393,6 +430,7 @@ const Projects = ({ fonts }) => {
     },
     {
       image: playoffs,
+      id: 'playoffs',
       title: 'Playoffs Hub',
       description:
         "I built a flexible, dynamic page that served as the public's one-stop shop for tickets, content, and scores during the Timberwolves' playoff run to the Western Conference Championship.",
@@ -401,6 +439,7 @@ const Projects = ({ fonts }) => {
     },
     {
       image: jaden,
+      id: 'badnight',
       title: 'All-Defense Campaign',
       description:
         "Minnesota Timberwolves forward Jaden McDaniels loves making the NBA's best players have a 'bad night.' This microsite, built to encourage his inclusion on the All-Defensive team, takes that quote and runs with it.",
@@ -409,6 +448,7 @@ const Projects = ({ fonts }) => {
     },
     {
       image: community,
+      id: 'community',
       title: 'Community Hub',
       description:
         'I redesigned and rebuilt the web presence for the Timberwolves and Lynx Community Impact team. The new look and feel prioritizes organization and imagery, capturing the human connections and joy this team brings to the Twin Cities community.',
@@ -456,7 +496,7 @@ const Projects = ({ fonts }) => {
       {/* mobile screens */}
       <div className='flex md:hidden flex-col gap-24'>
         {projects.map((project, i) => (
-          <div key={i} className='flex flex-col text-white'>
+          <div key={i} id={project.id} className='flex flex-col text-white'>
             <div className={`py-4`}>
               <div className={`flex flex-col gap-4 h-[80%] w-full`}>
                 <div className={`flex flex-col gap-1`}>
@@ -526,6 +566,7 @@ const Projects = ({ fonts }) => {
         {projects.map((project, i) => (
           <div
             key={project.title}
+            id={project.id}
             className='flex flex-col lg:grid lg:grid-cols-10 text-white'
           >
             {i % 2 !== 0 ? (
