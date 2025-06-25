@@ -20,14 +20,14 @@ import {
   FiMessageSquare,
   FiExternalLink,
 } from 'react-icons/fi'
-import jaden from '../public/images/jaden.png'
+// import jaden from '../public/images/jaden.png'
 import smirk from '../public/images/smirk.jpg'
 import city from '../public/images/city.jpg'
 import community from '../public/images/community.png'
 import classic from '../public/images/classic.jpg'
 import playoffs from '../public/images/playoffs.png'
 import howler from '../public/images/howls.png'
-import behere from '../public/images/behere.png'
+// import behere from '../public/images/behere.png'
 import single from '../public/images/single.jpg'
 
 const Home = () => {
@@ -130,7 +130,7 @@ const Home = () => {
           <section className='absolute bottom-2 w-full flex flex-col gap-1 font-mono text-gray-200 text-center'>
             <p className='text-[.5rem]'>Built with &#128153; by Brad Tramel</p>
             <p className='text-[.5rem]'>
-              Design inspired by
+              Design inspired by{' '}
               <a
                 href='https://brittanychiang.com/'
                 target='_blank'
@@ -385,48 +385,12 @@ const Projects = ({ fonts }) => {
   const projects = [
     {
       image: single,
-      title: 'Single Game Tickets LP',
+      title: 'Ticketing Landing Page',
       id: 'sgt',
       description:
-        'I redesigned and rebuilt our Single Game Tickets landing page, the primary point of sales for Timberwolves tickets. The overhauled site, with its clean interface and robust features, facilitated an impressive 66% year-over-year increase in ticket sales.',
+        'I redesigned and rebuilt our Single Game Tickets landing page, the primary point of sales for Timberwolves and Lynx tickets. The overhauled site, with its clean interface and robust features, facilitated an impressive 66% year-over-year increase in ticket sales.',
       techStack: ['NextJS', 'Tailwind', 'APIs'],
-      link: 'https://www.nba.com/timberwolves/single',
-    },
-    {
-      image: city,
-      id: 'city',
-      title: "'23 City Edition LP",
-      description:
-        'This landing page was the web component of a Hashtag Sports Award-nominated marketing campaign. Using animated SVGs and subtle gradients, it celebrates a uniform inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
-      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/lakelife',
-    },
-    {
-      image: classic,
-      id: 'classic',
-      title: "'23 Classic Edition LP",
-      description:
-        "Featuring a trailing mouse cursor and clever pop-ups, this landing page puts a modern twist on 90's web design to unveil the Timberwolves' 35th Anniversary Classic Edition Uniforms.",
-      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/classic',
-    },
-    {
-      image: behere,
-      id: 'behere',
-      title: 'Be Here',
-      description:
-        'I designed and built a fan-focused social media experience in our app. It integrates posts from Instagram and Twitter to help folks understand the excitement of being at Target Center for a game.',
-      techStack: ['NextJS', 'Figma', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/app/behere',
-    },
-    {
-      image: howler,
-      id: 'howler',
-      title: 'Howler',
-      description:
-        'Sometimes folks just want to have fun. Inspired by the real-life, fan-favorite Howler giveaway item, I created a virtual Howler for fans who missed the giveaway to use in their Timberwolves app.',
-      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/app/howl',
+      link: 'https://go.lynxbasketball.com/tickets/single',
     },
     {
       image: playoffs,
@@ -438,13 +402,31 @@ const Projects = ({ fonts }) => {
       link: 'https://www.nba.com/timberwolves/playoffs',
     },
     {
-      image: jaden,
-      id: 'badnight',
-      title: 'All-Defense Campaign',
+      image: classic,
+      id: 'classic',
+      title: "'23 Classic Microsite",
       description:
-        "Minnesota Timberwolves forward Jaden McDaniels loves making the NBA's best players have a 'bad night.' This microsite, built to encourage his inclusion on the All-Defensive team, takes that quote and runs with it.",
+        "Featuring a trailing mouse cursor and clever pop-ups, this landing page puts a modern twist on 90's web design to unveil the Timberwolves' 35th Anniversary Classic Edition Uniforms.",
       techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/badnight',
+      link: 'https://www.nba.com/timberwolves/classic',
+    },
+    {
+      image: howler,
+      id: 'howler',
+      title: 'Howler',
+      description:
+        'Sometimes folks just want to have fun. Inspired by the real-life, fan-favorite Howler giveaway item, I created a virtual Howler for fans who missed the giveaway to use in their Timberwolves app.',
+      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
+      link: 'https://www.nba.com/timberwolves/app/howl',
+    },
+    {
+      image: city,
+      id: 'city',
+      title: "'23 City Microsite",
+      description:
+        'This landing page was the web component of a Hashtag Sports Award-nominated marketing campaign. Using animated SVGs and subtle gradients, it celebrates a uniform inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
+      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
+      link: 'https://www.nba.com/timberwolves/lakelife',
     },
     {
       image: community,
@@ -455,6 +437,23 @@ const Projects = ({ fonts }) => {
       techStack: ['NextJS', 'Figma', 'Tailwind', 'Framer Motion'],
       link: 'https://www.nba.com/timberwolves/community',
     },
+    // {
+    //   image: behere,
+    //   id: 'behere',
+    //   title: 'Be Here',
+    //   description:
+    //     'I designed and built a fan-focused social media experience in our app. It integrates posts from Instagram and Twitter to help folks understand the excitement of being at Target Center for a game.',
+    //   techStack: ['NextJS', 'Figma', 'Tailwind', 'Framer Motion'],
+    // },
+    // {
+    //   image: jaden,
+    //   id: 'badnight',
+    //   title: 'All-Defense Microsite',
+    //   description:
+    //     "Minnesota Timberwolves forward Jaden McDaniels loves making the NBA's best players have a 'bad night.' This microsite, built to encourage his inclusion on the All-Defensive team, takes that quote and runs with it.",
+    //   techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
+    //   link: 'https://www.nba.com/timberwolves/badnight',
+    // },
     // {
     //   image: allstar,
     //   title: 'All-Star Campaign',
