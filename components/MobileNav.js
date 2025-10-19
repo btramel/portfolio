@@ -103,7 +103,7 @@ const MobileNav = ({ navItems, handleMobileMenu }) => {
           transition={{ delay: 0.15, duration: 0.4 }}
           className="px-8 pt-7 pb-12"
         >
-          <div className="text-5xl font-bold font-mono text-[#05BFDB]">B</div>
+          <div className="text-4xl font-bold font-mono text-[#05BFDB]">B</div>
         </motion.div>
 
         {/* Navigation Items */}

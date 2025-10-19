@@ -37,7 +37,9 @@ const Nav = ({ fonts, navItems, active, setActive }) => {
 
   return (
     <nav className=" cursor-none fixed z-40 flex w-full h-[4rem] items-center justify-between bg-[#0B192E] py-6 px-[40px]">
-      <div className={`${fonts.accent} font-extrabold md:text-4xl`}>B</div>
+      <div className={`${fonts.accent} font-extrabold text-3xl md:text-4xl`}>
+        B
+      </div>
       <motion.ul
         variants={motionContainer}
         initial="hidden"
