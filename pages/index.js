@@ -19,15 +19,14 @@ import { useInView } from "react-intersection-observer";
 import useMeasure from "react-use-measure";
 import CustomCursor from "../components/CustomCursor";
 import SEO from "../components/SEO";
-import AnimatedNav from "/components/AnimatedNav";
-// import jaden from '../public/images/jaden.png'
 import city from "../public/images/city.jpg";
 import classic from "../public/images/classic.jpg";
 import community from "../public/images/community.png";
 import howler from "../public/images/howls.png";
 import playoffs from "../public/images/playoffs.png";
 import smirk from "../public/images/smirk.jpg";
-// import behere from '../public/images/behere.png'
+import AnimatedNav from "/components/AnimatedNav";
+
 import single from "../public/images/single.jpg";
 
 const Home = () => {
