@@ -98,7 +98,7 @@ const Home = () => {
         <SocialsSidebar />
         <EmailSidebar />
 
-        <main className=" h-max w-screen flex flex-col cursor-none relative">
+        <main className="h-max max-w-[1600px] mx-auto w-screen flex flex-col cursor-none relative">
           <section
             id="home"
             ref={ref1}
@@ -116,7 +116,7 @@ const Home = () => {
           <section
             id="work"
             ref={ref3}
-            className="mt-[1px] min-h-[800px] sm:h-full w-full bg-[#0B192E] px-[2rem] sm:px-[5%] lg:px-[15%]"
+            className="mt-[1px] min-h-[800px] sm:h-full w-full px-[2rem] sm:px-[5%] lg:px-[15%]"
           >
             <Projects fonts={fonts} />
           </section>
