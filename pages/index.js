@@ -30,6 +30,7 @@ import AnimatedNav from "/components/AnimatedNav";
 import single from "../public/images/single.jpg";
 
 const Home = () => {
+  // log screen
   let [ref, { width }] = useMeasure();
 
   useEffect(() => {
