@@ -4,70 +4,70 @@
 /* FIX MOBILE NAV */
 /* TEST SEO */
 
-import AnimatedNav from '/components/AnimatedNav'
-import useMeasure from 'react-use-measure'
-import Lenis from 'lenis'
-import SEO from '../components/SEO'
-import React, { useState, useEffect } from 'react'
-import Image from 'next/image'
-import CustomCursor from '../components/CustomCursor'
-import { useInView } from 'react-intersection-observer'
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
+import Lenis from "lenis";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import {
-  FiLinkedin,
-  FiTwitter,
-  FiGithub,
-  FiMessageSquare,
   FiExternalLink,
-} from 'react-icons/fi'
+  FiGithub,
+  FiLinkedin,
+  FiMessageSquare,
+  FiTwitter,
+} from "react-icons/fi";
+import { useInView } from "react-intersection-observer";
+import useMeasure from "react-use-measure";
+import CustomCursor from "../components/CustomCursor";
+import SEO from "../components/SEO";
+import AnimatedNav from "/components/AnimatedNav";
 // import jaden from '../public/images/jaden.png'
-import smirk from '../public/images/smirk.jpg'
-import city from '../public/images/city.jpg'
-import community from '../public/images/community.png'
-import classic from '../public/images/classic.jpg'
-import playoffs from '../public/images/playoffs.png'
-import howler from '../public/images/howls.png'
+import city from "../public/images/city.jpg";
+import classic from "../public/images/classic.jpg";
+import community from "../public/images/community.png";
+import howler from "../public/images/howls.png";
+import playoffs from "../public/images/playoffs.png";
+import smirk from "../public/images/smirk.jpg";
 // import behere from '../public/images/behere.png'
-import single from '../public/images/single.jpg'
+import single from "../public/images/single.jpg";
 
 const Home = () => {
-  let [ref, { width }] = useMeasure()
+  let [ref, { width }] = useMeasure();
 
   useEffect(() => {
-    const lenis = new Lenis()
+    const lenis = new Lenis();
 
     function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf)
-  }, [])
+    requestAnimationFrame(raf);
+  }, []);
 
   const navItems = [
     {
-      name: 'home',
-      link: 'home',
-      key: '01.',
+      name: "home",
+      link: "home",
+      key: "01.",
     },
-    { name: 'about', link: 'about', key: '02.' },
-    { name: 'work', link: 'work', key: '03.' },
-    { name: 'contact', link: 'contact', key: '04.' },
-  ]
+    { name: "about", link: "about", key: "02." },
+    { name: "work", link: "work", key: "03." },
+    { name: "contact", link: "contact", key: "04." },
+  ];
   const fonts = {
-    accent: 'text-[#05BFDB] text-sm font-mono',
+    accent: "text-[#05BFDB] text-sm font-mono",
     primaryHeading:
-      'whitespace-nowrap text-gray-200 font-bold leading-tight font-sans',
-    secondaryHeading: 'text-gray-400 font-bold leading-tight font-sans',
-    base: 'text-gray-400 text-base font-sans',
-  }
+      "whitespace-nowrap text-gray-200 font-bold leading-tight font-sans",
+    secondaryHeading: "text-gray-400 font-bold leading-tight font-sans",
+    base: "text-gray-400 text-base font-sans",
+  };
 
-  const [active, setActive] = useState(navItems[0].name)
+  const [active, setActive] = useState(navItems[0].name);
 
-  const [ref1, inView, entry] = useInView()
-  const [ref2, inView2, entry2] = useInView({ initialInView: false })
-  const [ref3, inView3, entry3] = useInView({ initialInView: false })
-  const [ref4, inView4, entry4] = useInView({ initialInView: false })
+  const [ref1, inView, entry] = useInView();
+  const [ref2, inView2, entry2] = useInView({ initialInView: false });
+  const [ref3, inView3, entry3] = useInView({ initialInView: false });
+  const [ref4, inView4, entry4] = useInView({ initialInView: false });
 
   useEffect(() => {
     inView && !inView2
@@ -78,15 +78,15 @@ const Home = () => {
       ? setActive(entry3.target.id)
       : inView4
       ? setActive(entry4.target.id)
-      : null
-  }, [entry, entry2, entry3, entry4])
+      : null;
+  }, [entry, entry2, entry3, entry4]);
 
   return (
     <>
       <SEO />
       <div
         ref={ref}
-        className='min-h-screen flex bg-[#0B192E] bg-grid-small-[#efefef]/5'
+        className="min-h-screen flex bg-[#0B192E] bg-grid-small-[#efefef]/5"
       >
         <AnimatedNav
           fonts={fonts}
@@ -98,43 +98,43 @@ const Home = () => {
         <SocialsSidebar />
         <EmailSidebar />
 
-        <main className=' h-max w-screen flex flex-col cursor-none relative'>
+        <main className=" h-max w-screen flex flex-col cursor-none relative">
           <section
-            id='home'
+            id="home"
             ref={ref1}
-            className='mt-[1px] min-h-[800px] h-[100vh] w-full px-[2rem] sm:px-[5%] lg:px-[15%]'
+            className="mt-[1px] min-h-[800px] h-[100vh] w-full px-[2rem] sm:px-[5%] lg:px-[15%]"
           >
             <Hero fonts={fonts} />
           </section>
           <section
-            id='about'
+            id="about"
             ref={ref2}
-            className='mt-[3px] min-h-[800px] h-full w-full px-[2rem] sm:px-[5%] lg:px-[15%]'
+            className="mt-[3px] min-h-[800px] h-full w-full px-[2rem] sm:px-[5%] lg:px-[15%]"
           >
             <About fonts={fonts} />
           </section>
           <section
-            id='work'
+            id="work"
             ref={ref3}
-            className='mt-[1px] min-h-[800px] sm:h-full w-full bg-[#0B192E] px-[2rem] sm:px-[5%] lg:px-[15%]'
+            className="mt-[1px] min-h-[800px] sm:h-full w-full bg-[#0B192E] px-[2rem] sm:px-[5%] lg:px-[15%]"
           >
             <Projects fonts={fonts} />
           </section>
           <section
-            id='contact'
+            id="contact"
             ref={ref4}
-            className='mt-[1px] min-h-[800px] h-[101vh] w-full bg-[#0B192E] bg-grid-small-[#efefef]/5 px-[2rem] sm:px-[5%] lg:px-[15%]'
+            className="mt-[1px] min-h-[800px] h-[101vh] w-full bg-[#0B192E] bg-grid-small-[#efefef]/5 px-[2rem] sm:px-[5%] lg:px-[15%]"
           >
             <Contact fonts={fonts} />
           </section>
-          <section className='absolute bottom-2 w-full flex flex-col gap-1 font-mono text-gray-200 text-center'>
-            <p className='text-[.5rem]'>Built with &#128153; by Brad Tramel</p>
-            <p className='text-[.5rem]'>
-              Design inspired by{' '}
+          <section className="absolute bottom-2 w-full flex flex-col gap-1 font-mono text-gray-200 text-center">
+            <p className="text-[.5rem]">Built with &#128153; by Brad Tramel</p>
+            <p className="text-[.5rem]">
+              Design inspired by{" "}
               <a
-                href='https://brittanychiang.com/'
-                target='_blank'
-                rel='noopener noreferrer'
+                href="https://brittanychiang.com/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Brittany Chiang
               </a>
@@ -143,25 +143,25 @@ const Home = () => {
         </main>
       </div>
     </>
-  )
-}
+  );
+};
 
 const Button = ({ children, to }) => {
   return (
     <a href={to}>
-      <div className='relative text-[#05BFDB] text-sm font-mono'>
+      <div className="relative text-[#05BFDB] text-sm font-mono">
         <button
           className={`hover:cursor-none absolute z-20 border-2 border-[#05BFDB] px-8 py-3 bg-[#0B192E] rounded-md hover:translate-x-1 hover:translate-y-1 transition-all top-0 left-0 whitespace-nowrap`}
         >
           {children}
         </button>
-        <div className='absolute z-10 rounded-md whitespace-nowrap bg-[#05BFDB] px-8 py-3 top-0 left-0'>
+        <div className="absolute z-10 rounded-md whitespace-nowrap bg-[#05BFDB] px-8 py-3 top-0 left-0">
           {children}
         </div>
       </div>
     </a>
-  )
-}
+  );
+};
 
 const Hero = ({ fonts }) => {
   const container = {
@@ -169,12 +169,12 @@ const Hero = ({ fonts }) => {
     show: {
       opacity: 1,
       transition: {
-        when: 'beforeChildren',
+        when: "beforeChildren",
         delay: 0.7,
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: -10 },
@@ -182,25 +182,25 @@ const Hero = ({ fonts }) => {
       opacity: 1,
       y: 0,
       transition: {
-        ease: 'easeOut',
+        ease: "easeOut",
         duration: 0.4,
       },
     },
-  }
+  };
 
   return (
     <motion.div
       variants={container}
-      initial='hidden'
-      animate='show'
-      className='flex flex-col gap-6 items-start min-h-[600px] h-screen justify-center'
+      initial="hidden"
+      animate="show"
+      className="flex flex-col gap-6 items-start min-h-[600px] h-screen justify-center"
     >
       <motion.p variants={item} className={fonts.accent}>
         Hi, my name is
       </motion.p>
       <div
         style={{
-          fontSize: 'clamp(40px, 9vw, 64px)',
+          fontSize: "clamp(40px, 9vw, 64px)",
         }}
       >
         <motion.h1 variants={item} className={fonts.primaryHeading}>
@@ -217,99 +217,99 @@ const Hero = ({ fonts }) => {
       </motion.p>
       <motion.div
         variants={item}
-        className='relative text-[#05BFDB] text-sm font-mono'
+        className="relative text-[#05BFDB] text-sm font-mono"
       >
-        <Button to={'#about'}>Learn More!</Button>
-        <div className='absolute z-10 rounded-md whitespace-nowrap bg-[#05BFDB] px-8 py-3 top-0 left-0'>
+        <Button to={"#about"}>Learn More!</Button>
+        <div className="absolute z-10 rounded-md whitespace-nowrap bg-[#05BFDB] px-8 py-3 top-0 left-0">
           Learn More!
         </div>
       </motion.div>
     </motion.div>
-  )
-}
+  );
+};
 
 const SocialsSidebar = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ ease: 'easeOut', duration: 0.3, delay: 2.2 }}
-      className='invisible lg:visible z-50 fixed bottom-0 left-[40px] w-[40px] cursor-none'
+      transition={{ ease: "easeOut", duration: 0.3, delay: 2.2 }}
+      className="invisible lg:visible z-50 fixed bottom-0 left-[40px] w-[40px] cursor-none"
     >
       <ul className='w-full h-full cursor-none flex flex-col gap-4 items-center justify-center after:content-[""] after:block after:w-[1px] after:h-[90px] after:bg-gray-200/80'>
         <a
-          className='group cursor-none'
-          title='GitHub'
-          aria-label='GitHub'
-          href='https://www.github.com/btramel'
+          className="group cursor-none"
+          title="GitHub"
+          aria-label="GitHub"
+          href="https://www.github.com/btramel"
         >
-          <li className='text-gray-200 group-hover:text-[#05BFDB] hover:-translate-y-1 transition-transform cursor-none p-2'>
-            <FiGithub className='h-[20px] w-[20px]' />
+          <li className="text-gray-200 group-hover:text-[#05BFDB] hover:translate-x-4 transition-transform cursor-none p-2">
+            <FiGithub className="h-[20px] w-[20px]" />
           </li>
         </a>
 
         <a
-          className='group cursor-none'
-          title='Twitter'
-          aria-label='Twitter'
-          href='https://twitter.com/uhhhbrad'
+          className="group cursor-none"
+          title="Twitter"
+          aria-label="Twitter"
+          href="https://twitter.com/uhhhbrad"
         >
-          {' '}
-          <li className='text-gray-200 group-hover:text-[#05BFDB]  hover:-translate-y-1 transition-transform cursor-none p-2'>
-            <FiTwitter className='h-[20px] w-[20px]' />
+          {" "}
+          <li className="text-gray-200 group-hover:text-[#05BFDB]  hover:translate-x-4 transition-transform cursor-none p-2">
+            <FiTwitter className="h-[20px] w-[20px]" />
           </li>
         </a>
 
         <a
-          className='group cursor-none'
-          title='LinkedIn'
-          aria-label='LinkedIn'
-          href='https://www.linkedin.com/in/bradtramel/'
+          className="group cursor-none"
+          title="LinkedIn"
+          aria-label="LinkedIn"
+          href="https://www.linkedin.com/in/bradtramel/"
         >
-          <li className='text-gray-200 group-hover:text-[#05BFDB] hover:-translate-y-1 transition-transform cursor-none p-2'>
-            <FiLinkedin className='h-[20px] w-[20px]' />
+          <li className="text-gray-200 group-hover:text-[#05BFDB] hover:translate-x-4 transition-transform cursor-none p-2">
+            <FiLinkedin className="h-[20px] w-[20px]" />
           </li>
         </a>
 
         <a
-          className='group cursor-none'
-          aria-label='Email'
-          title='Email'
-          href='mailto:bradtramel@gmail.com?&subject=Hey Brad&body=Cool portfolio website!'
+          className="group cursor-none"
+          aria-label="Email"
+          title="Email"
+          href="mailto:bradtramel@gmail.com?&subject=Hey Brad&body=Cool portfolio website!"
         >
-          <li className='text-gray-200 group-hover:text-[#05BFDB] hover:-translate-y-1 transition-transform cursor-none mb-[1rem] p-2'>
-            <FiMessageSquare className='h-[20px] w-[20px]' />
+          <li className="text-gray-200 group-hover:text-[#05BFDB] hover:translate-x-4 transition-transform cursor-none mb-[1rem] p-2">
+            <FiMessageSquare className="h-[20px] w-[20px]" />
           </li>
         </a>
       </ul>
     </motion.div>
-  )
-}
+  );
+};
 
 const EmailSidebar = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ ease: 'easeOut', duration: 0.3, delay: 2.2 }}
-      className='invisible lg:visible z-50 block fixed bottom-0 right-[40px] w-[40px] cursor-none'
+      transition={{ ease: "easeOut", duration: 0.3, delay: 2.2 }}
+      className="invisible lg:visible z-50 block fixed bottom-0 right-[40px] w-[40px] cursor-none"
     >
       <a
-        aria-label='Email'
-        title='Email'
-        href='mailto:bradtramel@gmail.com?&subject=Hey Brad&body=Cool portfolio website!'
+        aria-label="Email"
+        title="Email"
+        href="mailto:bradtramel@gmail.com?&subject=Hey Brad&body=Cool portfolio website!"
         className='group relative cursor-none h-full w-full flex flex-col justify-start items-center after:content-[""] after:block after:w-[1px] after:h-[90px] after:bg-gray-200/80'
       >
         <div
-          style={{ writingMode: 'vertical-lr' }}
-          className='pb-[25px] tracking-widest text-gray-400 text-sm group-hover:text-[#05BFDB] cursor-none font-mono group-hover:-translate-y-1 transition-transform'
+          style={{ writingMode: "vertical-lr" }}
+          className="pb-[25px] tracking-widest text-gray-400 text-sm group-hover:text-[#05BFDB] cursor-none font-mono group-hover:-translate-y-4 transition-transform"
         >
           bradtramel@gmail.com
         </div>
       </a>
     </motion.div>
-  )
-}
+  );
+};
 
 const NumberedHeading = ({ number, title }) => {
   return (
@@ -317,11 +317,11 @@ const NumberedHeading = ({ number, title }) => {
       initial={{ opacity: 0, x: 30 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ ease: 'easeOut', duration: 0.5, delay: 0.25 }}
+      transition={{ ease: "easeOut", duration: 0.5, delay: 0.25 }}
       style={{
-        fontSize: 'clamp(22px, 4vw, 28px)',
+        fontSize: "clamp(22px, 4vw, 28px)",
       }}
-      className='flex flex-row flex-nowrap whitespace-nowrap gap-2 items-center pb-6 tracking-tight'
+      className="flex flex-row flex-nowrap whitespace-nowrap gap-2 items-center pb-6 tracking-tight"
     >
       <div className={`text-[#05BFDB] text-lg font-mono`}>{number}</div>
       <div className={`text-gray-400 font-bold font-sans`}>{title}</div>
@@ -329,113 +329,124 @@ const NumberedHeading = ({ number, title }) => {
         className={`w-[50%] justify-center items-center h-[1px] bg-[#05BFDB]/10`}
       ></div>
     </motion.div>
-  )
-}
+  );
+};
 
 const About = ({ fonts }) => {
   return (
-    <div className='flex flex-col gap-4 min-h-screen justify-center'>
-      <NumberedHeading number={'02.'} title={'About Me'} />
+    <div className="flex flex-col gap-4 min-h-screen justify-center">
+      <NumberedHeading number={"02."} title={"About Me"} />
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ ease: 'easeOut', duration: 1, delay: 0.75 }}
+        transition={{ ease: "easeOut", duration: 1, delay: 0.75 }}
         className={`flex flex-col gap-6 ${fonts.base}`}
       >
-        <div className='flex flex-col sm:flex-row gap-8'>
-          <div className='flex flex-col gap-6 max-w-[600px] leading-relaxed tracking-[.01rem]'>
-            <p className='font-light'>
-              Hey there! My name is Brad. I build{' '}
+        <div className="flex flex-col sm:flex-row gap-8">
+          <div className="flex flex-col gap-6 max-w-[600px] leading-relaxed tracking-[.01rem]">
+            <p className="font-light">
+              Hey there! My name is Brad. I build{" "}
               <a
-                href='https://www.hashtagsports.com/awards/shortlist-2024/minnesota-timberwolves-city-edition-unveil'
-                target='_blank'
-                rel='noopener noreferrer'
+                href="https://www.hashtagsports.com/awards/shortlist-2024/minnesota-timberwolves-city-edition-unveil"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 award-nominated
-              </a>{' '}
+              </a>{" "}
               web experiences for the Minnesota Timberwolves & Lynx: flashy
-              landing pages to <a href='#city'>get fans hyped</a>, and clean
-              React UIs to facilitate a positive experience when those fans{' '}
-              <a href='#sgt'>buy tickets</a>, browse concessions, and interact
-              with the brand.
+              marketing pages to <a href="#city">get fans hyped</a>, and clean
+              React UIs to make sure those fans enjoy browsing concessions,{" "}
+              <a href="#sgt">buying tickets</a>, and interacting with the brand.
             </p>
-            <p className='font-light'>
+            <p className="font-light">
               My professional life used to be an amalgam of side gigs — I
               managed projects for a construction company, wrote copy for an
-              e-commerce giant, and even detoured to law school. When I taught
-              myself web development, I knew I had found the spark I had been
-              searching for. I never looked back.
+              e-commerce giant, and even detoured to law school. I taught myself
+              to code 6 years ago and never looked back
             </p>
-            <p className='font-light'>
+            <p className="font-light">
               Now I use my writing chops, eye for design, and endless curiosity
               to build and design pixel-perfect websites.
             </p>
           </div>
-          <div className='relative max-w-[500px] aspect-[1170/1454] object-contain object-top my-auto w-full h-full rounded-lg'>
-            <Image src={smirk} alt='brad tramel' className='rounded-lg' fill />
+          <div className="relative max-w-[500px] aspect-[1170/1454] object-contain object-top my-auto w-full h-full rounded-lg">
+            <Image src={smirk} alt="brad tramel" className="rounded-lg" fill />
           </div>
         </div>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
 const Projects = ({ fonts }) => {
   const projects = [
     {
-      image: single,
-      title: 'Ticketing Landing Page',
-      id: 'sgt',
+      title: "The Trees Zine",
+      id: "trees",
       description:
-        'I redesigned and rebuilt our Single Game Tickets landing page, the primary point of sales for Timberwolves and Lynx tickets. The overhauled site, with its clean interface and robust features, facilitated an impressive 66% year-over-year increase in ticket sales.',
-      techStack: ['NextJS', 'Tailwind', 'APIs'],
-      link: 'https://go.lynxbasketball.com/tickets/single',
+        "The trees are back. We celebrated the re-release of our iconic uniform with a digital zine — blending spooky with sleek, nostalgic with new.",
+      techStack: ["NextJS", "Tailwind", "Framer Motion"],
+      image: "/images/trees-hero-web.png",
+      link: "https://www.nba.com/timberwolves/trees",
+    },
+    {
+      title: "Community Tour App",
+      description:
+        "I created a web experience that uses 3D maps to guide folks through culinary and cultural institutions in a historic Minneapolis neighborhood.",
+      video: "/images/communitytour.mp4",
+      techStack: ["NextJS", "Maptiler", "OpenStreetMap"],
+    },
+    {
+      image: single,
+      title: "Ticketing Landing Page",
+      id: "sgt",
+      description:
+        "I redesigned and rebuilt our Single Game Tickets landing page, the primary point of sales for Timberwolves and Lynx tickets. The overhauled site, with its clean interface and robust features, facilitated an impressive 66% year-over-year increase in ticket sales.",
+      techStack: ["NextJS", "Tailwind"],
+      link: "https://www.nba.com/timberwolves/tickets/single",
     },
     {
       image: playoffs,
-      id: 'playoffs',
-      title: 'Playoffs Hub',
+      id: "playoffs",
+      title: "Playoffs Hub",
       description:
-        "I built a flexible, dynamic page that served as the public's one-stop shop for tickets, content, and scores during the Timberwolves' playoff run to the Western Conference Championship.",
-      techStack: ['NextJS', 'Tailwind', 'APIs'],
-      link: 'https://www.nba.com/timberwolves/playoffs',
+        "I built a flexible, dynamic page that served as the public's one-stop shop for tickets, content, and scores during the Timberwolves' recent playoff runs to the Western Conference Championship.",
+      techStack: ["NextJS", "Tailwind", "APIs"],
     },
     {
       image: classic,
-      id: 'classic',
+      id: "classic",
       title: "'23 Classic Microsite",
       description:
-        "Featuring a trailing mouse cursor and clever pop-ups, this landing page puts a modern twist on 90's web design to unveil the Timberwolves' 35th Anniversary Classic Edition Uniforms.",
-      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/classic',
+        "Featuring a trailing mouse cursor and clever pop-ups, this landing page put a modern twist on 90's web design to unveil the Timberwolves' 35th Anniversary Classic Edition Uniforms.",
+      techStack: ["NextJS", "Tailwind", "Framer Motion"],
     },
     {
       image: howler,
-      id: 'howler',
-      title: 'Howler',
+      id: "howler",
+      title: "Howler",
       description:
-        'Sometimes folks just want to have fun. Inspired by the real-life, fan-favorite Howler giveaway item, I created a virtual Howler for fans who missed the giveaway to use in their Timberwolves app.',
-      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/app/howl',
+        "Sometimes folks just want to have fun. Inspired by the real-life, fan-favorite Howler giveaway item, I created a virtual Howler for fans who missed the giveaway to use in their Timberwolves app.",
+      techStack: ["NextJS", "Tailwind", "Framer Motion"],
+      link: "https://www.nba.com/timberwolves/app/howl",
     },
     {
       image: city,
-      id: 'city',
+      id: "city",
       title: "'23 City Microsite",
       description:
-        'This landing page was the web component of a Hashtag Sports Award-nominated marketing campaign. Using animated SVGs and subtle gradients, it celebrates a uniform inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.',
-      techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/lakelife',
+        "This landing page was the web component of a Hashtag Sports Award-nominated marketing campaign. Using animated SVGs and subtle gradients, it celebrates a uniform inspired by the summertime fun that can only be found in the Land of 10,000 Lakes.",
+      techStack: ["NextJS", "Tailwind", "Framer Motion"],
     },
     {
       image: community,
-      id: 'community',
-      title: 'Community Hub',
+      id: "community",
+      title: "Community Hub",
       description:
-        'I redesigned and rebuilt the web presence for the Timberwolves and Lynx Community Impact team. The new look and feel prioritizes organization and imagery, capturing the human connections and joy this team brings to the Twin Cities community.',
-      techStack: ['NextJS', 'Figma', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/community',
+        "I redesigned and rebuilt the web presence for the Timberwolves and Lynx Community Impact team. The new look and feel prioritizes organization and imagery, capturing the human connections and joy this team brings to the Twin Cities community.",
+      techStack: ["NextJS", "Figma", "Tailwind", "Framer Motion"],
+      link: "https://www.nba.com/timberwolves/community",
     },
     // {
     //   image: behere,
@@ -487,15 +498,15 @@ const Projects = ({ fonts }) => {
     //   github: 'https://github.com/btramel/blog',
     //   link: 'https://blog-btramel.vercel.app',
     // },
-  ]
+  ];
   return (
-    <div className='flex flex-col min-h-screen justify-center py-40'>
-      <NumberedHeading number='.03' title="Things I've Built" />
+    <div className="flex flex-col min-h-screen justify-center py-40">
+      <NumberedHeading number=".03" title="Things I've Built" />
 
       {/* mobile screens */}
-      <div className='flex md:hidden flex-col gap-24'>
+      <div className="flex md:hidden flex-col gap-24">
         {projects.map((project, i) => (
-          <div key={i} id={project.id} className='flex flex-col text-white'>
+          <div key={i} id={project.id} className="flex flex-col text-white">
             <div className={`py-4`}>
               <div className={`flex flex-col gap-4 h-[80%] w-full`}>
                 <div className={`flex flex-col gap-1`}>
@@ -504,53 +515,94 @@ const Projects = ({ fonts }) => {
                     {project.title}
                   </div>
                 </div>
-                <div className={`relative aspect-video z-3 rounded-xl `}>
-                  <a
-                    href={project.link}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <Image
-                      src={project.image}
-                      alt='image'
-                      className='rounded-lg'
-                      fill
-                    />
-                  </a>
-                </div>
+                {project.link ? (
+                  <div className={`relative aspect-video z-3 rounded-xl `}>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          alt="image"
+                          className="rounded-lg"
+                          fill
+                        />
+                      ) : null}
+                      {project.video ? (
+                        <video
+                          poster={project.poster}
+                          preload="auto"
+                          muted
+                          playsInline
+                          autoPlay
+                          loop
+                          className="rounded-lg w-full h-full object-cover"
+                        >
+                          <source src={project.video} type="video/mp4" />
+                        </video>
+                      ) : null}
+                    </a>
+                  </div>
+                ) : (
+                  <div className={`relative aspect-video z-3 rounded-xl `}>
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt="image"
+                        className="rounded-lg"
+                        fill
+                      />
+                    ) : null}
+                    {project.video ? (
+                      <video
+                        poster={project.poster}
+                        preload="auto"
+                        muted
+                        playsInline
+                        autoPlay
+                        loop
+                        className="rounded-lg w-full h-full object-cover"
+                      >
+                        <source src={project.video} type="video/mp4" />
+                      </video>
+                    ) : null}
+                  </div>
+                )}
                 <div
                   className={`${fonts.base} w-full z-20 bg-[#011f38] p-6 aspect-4/5 rounded-md shadow-md shadow-black/70 leading-relaxed tracking-[.01rem]`}
                 >
                   {project.description}
                 </div>
-                <ul className='flex flex-row gap-5 font-mono text-gray-400 text-sm z-4'>
+                <ul className="flex flex-row gap-5 font-mono text-gray-400 text-sm z-4">
                   {project.techStack.map((tech, i) => (
                     <li key={i}>{tech}</li>
                   ))}
                 </ul>
-                <div className='flex flex-row gap-6'>
+                <div className="flex flex-row gap-6">
                   {project.github ? (
                     <a
-                      className='text-gray-200 cursor-none'
-                      aria-label='GitHub'
-                      title='GitHub'
-                      target='_blank'
-                      rel='noopener noreferrer'
+                      className="text-gray-200 cursor-none"
+                      aria-label="GitHub"
+                      title="GitHub"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={project.github}
                     >
-                      <FiGithub className='h-[20px] w-[20px]' />
+                      <FiGithub className="h-[20px] w-[20px]" />
                     </a>
                   ) : null}
                   {project.link ? (
                     <a
-                      className='text-gray-200 cursor-none'
-                      aria-label='External Link'
-                      title='External Link'
-                      target='_blank'
-                      rel='noopener noreferrer'
+                      className="text-gray-200 cursor-none"
+                      aria-label="External Link"
+                      title="External Link"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={project.link}
                     >
-                      <FiExternalLink className='h-[20px] w-[20px]' />
+                      <FiExternalLink className="h-[20px] w-[20px]" />
                     </a>
                   ) : null}
                 </div>
@@ -561,45 +613,61 @@ const Projects = ({ fonts }) => {
       </div>
 
       {/* desktop screens */}
-      <div className='hidden md:flex flex-col gap-24'>
+      <div className="hidden md:flex flex-col gap-24">
         {projects.map((project, i) => (
           <div
             key={project.title}
             id={project.id}
-            className='flex flex-col lg:grid lg:grid-cols-10 text-white'
+            className="flex flex-col lg:grid lg:grid-cols-10 text-white"
           >
             {i % 2 !== 0 ? (
-              <div
-                className={`relative col-span-6 aspect-video z-3 rounded-xl `}
-              >
-                <a
-                  href={project.link}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <Image
-                    src={project.image}
-                    alt='image'
-                    className='hover:translate-x-2 hover:translate-y-2 transition ease-in-out rounded-lg'
-                    fill
-                  />
-                </a>
-                <div className='bg-[#05BFDB] h-full w-full rounded-xl' />
+              <div className="relative col-span-6 aspect-video rounded-xl">
+                <div className="relative w-full h-full z-10">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full h-full"
+                  >
+                    {project.image && (
+                      <Image
+                        src={project.image}
+                        alt="image"
+                        className="hover:translate-x-2 hover:translate-y-2 transition ease-in-out rounded-lg"
+                        fill
+                      />
+                    )}
+                    {project.video && (
+                      <video
+                        poster={project.poster}
+                        preload="auto"
+                        muted
+                        playsInline
+                        autoPlay
+                        loop
+                        className="hover:translate-x-2 hover:translate-y-2 transition ease-in-out rounded-lg w-full h-full object-cover"
+                      >
+                        <source src={project.video} type="video/mp4" />
+                      </video>
+                    )}
+                  </a>
+                </div>
+                <div className="absolute inset-0 bg-[#05BFDB] rounded-xl w-full h-full" />
               </div>
             ) : null}
             <div
               className={`py-4 col-span-4 ${
-                i % 2 !== 0 ? 'items-end' : 'items-start'
+                i % 2 !== 0 ? "items-end" : "items-start"
               }`}
             >
               <div
                 className={`flex flex-col gap-4 ${
-                  i % 2 !== 0 ? 'items-end' : 'items-start'
+                  i % 2 !== 0 ? "items-end" : "items-start"
                 } h-[80%] w-full`}
               >
                 <div
                   className={`flex flex-col gap-1 ${
-                    i % 2 !== 0 ? 'items-end' : 'items-start'
+                    i % 2 !== 0 ? "items-end" : "items-start"
                   }`}
                 >
                   <div className={fonts.accent}>Featured Project</div>
@@ -607,60 +675,42 @@ const Projects = ({ fonts }) => {
                     {project.title}
                   </div>
                 </div>
-                {i % 2 !== 0 ? (
-                  <div
-                    className={`relative col-span-6 aspect-video z-3 rounded-xl `}
-                  >
-                    <a
-                      href={project.link}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      <Image
-                        src={project.image}
-                        alt='image'
-                        className='hover:translate-x-2 hover:translate-y-2 transition ease-in-out rounded-lg'
-                        fill
-                      />
-                    </a>
-                    <div className='bg-[#05BFDB] h-full w-full rounded-xl' />
-                  </div>
-                ) : null}
+
                 <div
                   className={`${fonts.base} w-full lg:w-[110%] ${
-                    i % 2 !== 0 ? 'text-right' : 'text-left'
+                    i % 2 !== 0 ? "text-right" : "text-left"
                   } z-20 bg-[#011f38] p-6 aspect-4/5 rounded-md shadow-md shadow-black/70 leading-relaxed tracking-[.01rem]`}
                 >
                   {project.description}
                 </div>
-                <ul className='flex flex-row gap-5 font-mono text-gray-400 text-sm z-4'>
+                <ul className="flex flex-row gap-5 font-mono text-gray-400 text-sm z-4">
                   {project.techStack.map((tech, i) => (
                     <li key={i}>{tech}</li>
                   ))}
                 </ul>
-                <div className='flex flex-row gap-6'>
+                <div className="flex flex-row gap-6">
                   {project.github ? (
                     <a
-                      className='text-gray-200 hover:text-[#05BFDB] cursor-none'
-                      aria-label='GitHub'
-                      title='GitHub'
-                      target='_blank'
-                      rel='noopener noreferrer'
+                      className="text-gray-200 hover:text-[#05BFDB] cursor-none"
+                      aria-label="GitHub"
+                      title="GitHub"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={project.github}
                     >
-                      <FiGithub className='h-[20px] w-[20px]' />
+                      <FiGithub className="h-[20px] w-[20px]" />
                     </a>
                   ) : null}
                   {project.link ? (
                     <a
-                      className='text-gray-200 hover:text-[#05BFDB] cursor-none'
-                      aria-label='External Link'
-                      title='External Link'
-                      target='_blank'
-                      rel='noopener noreferrer'
+                      className="text-gray-200 hover:text-[#05BFDB] cursor-none"
+                      aria-label="External Link"
+                      title="External Link"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={project.link}
                     >
-                      <FiExternalLink className='h-[20px] w-[20px]' />
+                      <FiExternalLink className="h-[20px] w-[20px]" />
                     </a>
                   ) : null}
                 </div>
@@ -670,32 +720,50 @@ const Projects = ({ fonts }) => {
               <div
                 className={`relative col-span-6 aspect-video z-3 rounded-xl `}
               >
-                <a
-                  href={project.link}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <Image
-                    src={project.image}
-                    alt='image'
-                    className='hover:-translate-x-2 hover:-translate-y-2 transition ease-in-out rounded-lg'
-                    fill
-                  />
-                </a>
-                <div className='bg-[#05BFDB] h-full w-full rounded-xl' />
+                <div className="relative w-full h-full z-10">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.image && (
+                      <Image
+                        src={project.image}
+                        alt="image"
+                        className="hover:-translate-x-2 hover:-translate-y-2 transition ease-in-out rounded-lg"
+                        fill
+                      />
+                    )}
+
+                    {project.video ? (
+                      <video
+                        poster={project.poster}
+                        muted
+                        playsInline
+                        preload="auto"
+                        autoPlay
+                        loop
+                        className="rounded-lg w-full h-full object-cover"
+                      >
+                        <source src={project.video} type="video/mp4" />
+                      </video>
+                    ) : null}
+                    <div className="bg-[#05BFDB] h-full w-full rounded-xl" />
+                  </a>
+                </div>
               </div>
             ) : null}
           </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Contact = ({ fonts }) => {
   return (
-    <div className='h-full w-full flex flex-col items-center justify-center gap-4'>
-      <div className='group w-1/2 flex flex-col items-start justify-start gap-6 text-left'>
+    <div className="h-full w-full flex flex-col items-center justify-center gap-4">
+      <div className="group w-1/2 flex flex-col items-start justify-start gap-6 text-left">
         <h1 className={`${fonts.accent}`}>04. What&apos;s Next?</h1>
         <h2 className={`${fonts.primaryHeading} text-[2.25rem]`}>
           Don&apos;t Be Shy
@@ -706,13 +774,13 @@ const Contact = ({ fonts }) => {
         </p>
         <Button
           to={
-            'mailto:bradtramel@gmail.com?&subject=Hey Brad&body=Cool portfolio website!'
+            "mailto:bradtramel@gmail.com?&subject=Hey Brad&body=Cool portfolio website!"
           }
         >
           Say Hello
         </Button>
       </div>
     </div>
-  )
-}
-export default Home
+  );
+};
+export default Home;
