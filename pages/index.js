@@ -419,6 +419,7 @@ const Projects = ({ fonts }) => {
       description:
         "I built a flexible, dynamic page that served as the public's one-stop shop for tickets, content, and scores during the Timberwolves' recent playoff runs to the Western Conference Championship.",
       techStack: ['NextJS', 'Tailwind', 'APIs'],
+      link: 'https://www.nba.com/timberwolves/playoffs',
     },
     {
       image: classic,
@@ -435,7 +436,7 @@ const Projects = ({ fonts }) => {
       description:
         'Sometimes folks just want to have fun. Inspired by the real-life, fan-favorite Howler giveaway item, I created a virtual Howler for fans who missed the giveaway to use in their Timberwolves app.',
       techStack: ['NextJS', 'Tailwind', 'Framer Motion'],
-      link: 'https://www.nba.com/timberwolves/app/howl',
+      link: 'https://www.nba.com/timberwolves/app/howler',
     },
     {
       image: city,

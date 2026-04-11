@@ -56,6 +56,7 @@
       "formats": [
         "image/webp"
       ],
+      "maximumResponseBody": 50000000,
       "dangerouslyAllowSVG": false,
       "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
       "contentDispositionType": "attachment",
@@ -99,7 +100,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/bradtramel",
+    "outputFileTracingRoot": "/Users/bradtramel/Code/portfolio",
     "experimental": {
       "useSkewCookie": false,
       "cacheLife": {
@@ -158,7 +159,7 @@
       "middlewarePrefetch": "flexible",
       "optimisticClientCache": true,
       "manualClientBasePath": false,
-      "cpus": 7,
+      "cpus": 9,
       "memoryBasedWorkersCount": false,
       "imgOptConcurrency": null,
       "imgOptTimeoutInSeconds": 7,
@@ -289,11 +290,11 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.js",
     "turbopack": {
-      "root": "/Users/bradtramel"
+      "root": "/Users/bradtramel/Code/portfolio"
     }
   },
-  "appDir": "/Users/bradtramel/portfolio",
-  "relativeAppDir": "portfolio",
+  "appDir": "/Users/bradtramel/Code/portfolio",
+  "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",
     ".next/server/pages-manifest.json",
